@@ -1,9 +1,9 @@
 <kendo-grid [kendoGridBinding]="userActivityLog" scrollable="scrollable" [style]="{ height: '100%' }">
-        <kendo-grid-column field="begin" title="Begin"> </kendo-grid-column>
-        <kendo-grid-column field="endtime" title="EndTime"> </kendo-grid-column>
+        <kendo-grid-column field="begin" title="Begin" [width]="160"> </kendo-grid-column>
+        <kendo-grid-column field="endtime" title="EndTime" [width]="160"> </kendo-grid-column>
         <kendo-grid-column field="username" title="UserName"> </kendo-grid-column>
         <kendo-grid-column field="computername" title="Machine Name"> </kendo-grid-column>
-        <kendo-grid-column field="bvno" title="BV Number" [style]="{ 'text-align': 'center' }" [width]="80"> </kendo-grid-column>
+        <kendo-grid-column field="bvno" title="BV Number" > </kendo-grid-column>
         <kendo-grid-column field="bvdesc" title="BV Desc"> </kendo-grid-column>
         <kendo-grid-column field="activity" title="Activity"> </kendo-grid-column>
         <kendo-grid-column field="status" title="Status"> </kendo-grid-column>
