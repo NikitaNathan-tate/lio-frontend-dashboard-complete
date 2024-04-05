@@ -1,17 +1,10 @@
-<kendo-grid [data]="dataSource" 
-            class="custom-kendo-grid"
-            [selectable]="{ mode: 'multiple', checkboxOnly: false }"
-            (selectionChange)="onSelectionChange($event)"
-            scrollable="scrollable"
-            [style]="{ height: '100%' }">
+<kendo-grid [data]="dataSource" class="custom-kendo-grid" [selectable]="{ mode: 'multiple', checkboxOnly: false }"
+    (selectionChange)="onSelectionChange($event)" scrollable="scrollable" [style]="{ height: '100%' }">
     <kendo-grid-checkbox-column [width]="40"></kendo-grid-checkbox-column>
-    <ng-container *ngFor="let column of columns">
-        <kendo-grid-column [field]="column.field" [title]="column.title" [hidden]="column.hidden">
-            <ng-template kendoGridCellTemplate let-dataItem>
-                <div class="gridCell">
-                    {{dataItem[column.field]}}
-                </div>
-            </ng-template>
-        </kendo-grid-column>
-    </ng-container>
+    <kendo-grid-column [width]="80" field="nummer" title="Number"> </kendo-grid-column>
+    <kendo-grid-column field="description" title="Abbreviation"> </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name"> </kendo-grid-column>
+    <kendo-grid-column field="activity" title="Activity"> </kendo-grid-column>
+    <kendo-grid-column [width]="160" field="activitystarttime" title="Begin"></kendo-grid-column>
+    <kendo-grid-column [width]="120" field="nosessions" title="No. of Sessions"> </kendo-grid-column>
 </kendo-grid>

@@ -3,32 +3,24 @@
 @use "/src/styles/abstracts/functions";
 @use "/src/styles/abstracts/mixins";
 
-// .kendo-grid-container .kendo-grid .gridCell {
-//   padding: 0 !important;
-//   margin: 0 !important;
-// }
 
-::ng-deep .k-table-th > .k-cell-inner > .k-link {
+::ng-deep .k-table-th>.k-cell-inner>.k-link {
   padding-block: 0px !important;
   padding-inline: 0px !important;
 }
 
-.gridCell{
+.gridCell {
   padding-left: 0px !important;
   margin: 0px !important;
 }
 
 ::ng-deep .k-grid table td {
-  padding: 0px !important; /* Override padding and ensure it's applied */
-  margin-left: 10px !important;  /* Override margin and ensure it's applied */
-}
-::ng-deep .k-grid .k-checkbox-wrapper {
-  display: flex;
-  justify-content: center; /* Centers the checkbox horizontally */
-  align-items: center; /* Centers the checkbox vertically */
+  padding: 0px !important;
+  margin-left: 10px !important;
 }
 
-::ng-deep .k-grid td:first-child, .k-grid .k-table-td:first-child {
-  border-inline-start-width: 5px !important;
-vertical-align: baseline;
+::ng-deep .k-grid .k-checkbox-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
