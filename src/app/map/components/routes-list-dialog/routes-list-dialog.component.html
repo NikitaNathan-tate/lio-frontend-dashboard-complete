@@ -1,0 +1,58 @@
+<div class="patterns-list-dialog">
+
+  <!-- TITLE -->
+  <span class="title">SHOW PATTERN</span>
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <mat-form-field class="pattern-number" appearance="outline">
+      <mat-label>Pattern number</mat-label>
+      <input matInput
+             type="number"
+             step="1"
+             max="99999"
+             placeholder="Is equal to..."
+             [ngModel]="patternNumberFilterValue"
+             (ngModelChange)="onPatternNumberFilterChange($event)">
+    </mat-form-field>
+
+    
+  </div>
+
+  <div class="dialog-content">
+
+    <!-- PATTERNS -->
+    <ng-container *ngIf="dataLoaded; else spinner">
+      <cdk-virtual-scroll-viewport *ngIf="displayedPatterns.length>0; else noPatternTemplateRef"
+                                   class="pattern-scroll-viewport" [itemSize]="60">
+        <ng-container *cdkVirtualFor="let p of displayedPatterns; trackBy: Utils.trackByDuid">
+          <mat-divider></mat-divider>
+          <span matRipple
+                class="pattern"
+                (click)="onPatternClick(p)"
+                >
+            <span title="Route" class="pattern-number">
+              {{ getroute(p.routeindex) }}
+            </span>
+            <span title="Pattern number" class="pattern-number">
+              {{ p.patternnumber }}
+            </span>
+          </span>
+        </ng-container>
+      </cdk-virtual-scroll-viewport>
+
+      <ng-template #noPatternTemplateRef>
+        <span class="no-patterns">NO PATTERNS FOUND</span>
+      </ng-template>
+    </ng-container>
+
+    <!-- SPINNER -->
+    <ng-template #spinner>
+      <div class="data-loading-spinner">
+        <app-custom-spinner ></app-custom-spinner>
+      </div>
+    </ng-template>
+
+  </div>
+
+</div>

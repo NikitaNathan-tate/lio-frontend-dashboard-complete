@@ -1,0 +1,85 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/mixins";
+
+  .k-radio:checked{
+    content: "";
+  display: inline-block;
+   
+  border: 1px solid black;
+  margin-right: 5px; 
+  border-color: black;
+  visibility: visible;
+
+}
+.k-radio:checked::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 40%;
+  background-color: black;
+  border: 1px solid black;
+  margin-left: 4px;
+  margin-bottom: 4px;
+
+}
+//$kendo-color-primary
+
+.outer-progress .k-progressbar-value {
+  background-color: functions.matColor(variables.$trapeze-palette-primary, 700);
+}
+
+.inner-progress .k-progressbar-value {
+  background-color: functions.matColor(variables.$trapeze-palette-primary, 700);
+}
+
+.parent-progress {
+  display: block;
+  margin-bottom: 1rem; /* Add spacing between progress bars if desired */
+}
+
+.outer-progress {
+  width: 60%;
+  height: 1rem;
+}
+
+.outer-progress {
+  background-color:  functions.matColor(mat.$grey-palette, 300);;
+}
+
+.inner-progress {
+  width: 50%;
+  height: 1rem;
+  background-color:  functions.matColor(mat.$grey-palette, 300);;
+}
+.k-step-indicator {
+  background-color: lightgrey !important;
+  border-color: lightgrey !important;
+}
+
+.k-step-body {
+  background-color: lightgrey !important;
+  border-color: lightgrey !important;
+}
+.k-step-header {
+  background-color: grey !important;
+  border-color: lightgrey !important;
+}
+
+.k-progressbar .k-selected {
+  //background-color:  functions.matColor(mat.$grey-palette, 300);
+  background: functions.matColor(variables.$trapeze-palette-primary, 700);
+
+}
+.k-progressbar {
+  background-color: lightgray;
+}
+.scrollview {
+  white-space: break-spaces;
+}
+
+.k-scrollview .k-scrollview-wrap > li {
+  overflow: auto;
+}

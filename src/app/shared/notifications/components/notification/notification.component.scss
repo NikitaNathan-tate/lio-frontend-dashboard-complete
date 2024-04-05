@@ -1,0 +1,44 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/variables";
+
+.notification {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+
+
+  &.info {
+    .icon {
+      color: functions.matColor(mat.$light-blue-palette, 600);
+    }
+  }
+
+  &.warning {
+    .icon, .text {
+      color: functions.matColor(mat.$amber-palette, 700);
+    }
+  }
+
+  &.error {
+    .icon, .text {
+      color: functions.matColor(mat.$red-palette, 700);
+    }
+  }
+
+  .text {
+    flex: 2 0 50%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    padding-right: 2rem;
+    color: variables.$dark-text-color;
+  }
+
+  .datetime {
+    color: functions.matColor(mat.$grey-palette, 400);
+  }
+}

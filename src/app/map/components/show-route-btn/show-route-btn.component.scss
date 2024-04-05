@@ -1,0 +1,23 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+
+.show-route-btn {
+  padding: 0.3rem;
+  min-width: 0;
+  line-height: normal;
+  box-shadow: variables.$mat-elevation-z5;
+
+  &.highlighted {
+    background-color: variables.$primary-color;
+
+    .icon {
+      color: variables.$light-text-color;
+    }
+  }
+
+  .icon {
+    font-size: 1.5rem;
+    color: variables.$dark-text-color;
+  }
+}

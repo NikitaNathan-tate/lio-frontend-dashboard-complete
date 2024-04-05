@@ -1,0 +1,80 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-Bold.ttf");
+    font-weight: 700;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-BoldItalic.ttf");
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-Black.ttf");
+    font-weight: 800;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-BlackItalic.ttf");
+    font-weight: 800;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-Italic.ttf");
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-Light.ttf");
+    font-weight: 300;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-LightItalic.ttf");
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-Regular.ttf");
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    src: url("/Client/assets/fonts/Roboto/Roboto-Medium.ttf");
+    font-weight: 600;
+  }
+  
+  @font-face {
+    font-family: "Roboto";
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-display: block !important; // In order to not show the icon text, when icons are still loading
+    font-weight: 400;
+    src: url("/Client/assets/fonts/MaterialIcons/material-icons.woff2") format('woff2');
+  }
+  
+  @font-face {
+    font-family: 'Material Icons Outlined';
+    font-style: normal;
+    font-display: block !important; // In order to not show the icon text, when icons are still loading
+    font-weight: 400;
+    src: url("/Client/assets/fonts/MaterialIcons/material-icons-outlined.woff2") format('woff2');
+  }
+  

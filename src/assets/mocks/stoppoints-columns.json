@@ -1,0 +1,62 @@
+   [
+    {
+      "field": "primarykeyduid",
+      "title": "ID",
+      "width": 50,
+      "type": "number",
+      "filterType": "numeric",
+      "filterable": "false",
+      "hidden": true,
+      "isreadonly": false
+    },
+    {
+      "field": "stopindex",
+      "title": "stopindex",
+      "width": 50,
+      "type": "number",
+      "filterType": "numeric",
+      "filterable": "false",
+      "hidden": true,
+      "isreadonly": false
+    },
+    {
+      "field": "stopname",
+      "title": "Stop",
+      "width": 200,
+      "type": "string",
+      "filterType": "text",
+      "filterable": "true",
+      "hidden": false,
+      "isreadonly": true
+    },
+    {
+      "field": "pointnumber",
+      "title": "Number",
+      "width": 100,
+      "type": "number",
+      "filterType": "numeric",
+      "filterable": "true",
+      "hidden": false,
+      "isreadonly": false
+    },
+    {
+      "field": "pointname",
+      "title": "Name",
+      "width": 200,
+      "type": "string",
+      "filterType": "text",
+      "filterable": "true",
+      "hidden": false,
+      "isreadonly": false
+    },
+    {
+      "field": "longnumber",
+      "title": "Long Number",
+      "width": 100,
+      "type": "number",
+      "filterType": "numeric",
+      "filterable": "true",
+      "hidden": false,
+      "isreadonly": false
+    }
+  ]

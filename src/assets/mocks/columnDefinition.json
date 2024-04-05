@@ -1,0 +1,3587 @@
+{
+  "GuiTables": [
+    {
+      "Name": "Gdm:Haltestelle",
+      "Id": "69",
+      "HelpId": "380",
+      "Title": "stops",
+      "ChildName": "stoppoints",
+      "ChildTableName": "Gdm:Haltepunkt",
+      "MapDisplay": true,
+      "RepPriority": 1,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:Haltestelle.Idx",
+          "helpId": 380,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stopnumber",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:Haltestelle.Nummer",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "shortcode",
+          "title": "Abbr.",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:Haltestelle.Kurzbezeichner",
+          "helpId": 383,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "langbezeichner",
+          "title": "Name",
+          "width": 200,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:Haltestelle.Langbezeichner",
+          "helpId": 385,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "haltestellenlangnummer",
+          "title": "Long Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:Haltestelle.HaltestellenLangNummer",
+          "helpId": 386,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "zonewabeindex",
+          "title": "Tariff Zone",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 6,
+          "attribute": "Gdm:Haltestelle.ZoneWabeIndex",
+          "helpId": 387,
+          "refTable": "Gdm:ZoneWabe",
+          "refAttribute": "Gdm:ZoneWabe.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "ibisbezeichner",
+          "title": "IBIS Name",
+          "width": 200,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 7,
+          "attribute": "Gdm:Haltestelle.IBISBezeichner",
+          "helpId": 388,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "tlpmode",
+          "title": "TLP Mode",
+          "width": 200,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 9,
+          "attribute": "Gdm:Haltestelle.LSAAnforderungTuere",
+          "helpId": 389,
+          "refTable": "Gdm:LSAAnforderung",
+          "refAttribute": "Gdm:LSAAnforderung.Idx",
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "No activity"
+            },
+            {
+              "Value": 1,
+              "Text": "Message locked"
+            },
+            {
+              "Value": 2,
+              "Text": "Auto."
+            },
+            {
+              "Value": 3,
+              "Text": "Manual"
+            },
+            {
+              "Value": 4,
+              "Text": "After doors close"
+            },
+            {
+              "Value": 5,
+              "Text": "1 m after closing the door"
+            },
+            {
+              "Value": 6,
+              "Text": "On opening the door"
+            },
+            {
+              "Value": 7,
+              "Text": "On opening and closing the door"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "fahrzeugansagetextindex",
+          "title": "Veh. Announcement Text",
+          "width": 200,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 10,
+          "attribute": "Gdm:Haltestelle.FahrzeugAnsageTextIndex",
+          "helpId": 390,
+          "refTable": "Gdm:FahrzeugAnsageText",
+          "refAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "haltestellenindex",
+          "title": "Stopping Points",
+          "width": 200,
+          "type": "list",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 11,
+          "attribute": "Gdm:Haltepunkt.idx",
+          "helpId": 7915,
+          "refTable": "Gdm:Haltepunkt",
+          "representationTable": "Gdm:Haltepunkt",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "mfaanschlussbildschirm",
+          "title": "MFD Transfer Screen",
+          "width": 200,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 12,
+          "attribute": "Gdm:Haltestelle.MFAAnschlussBildschirm",
+          "helpId": 397,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "Off"
+            },
+            {
+              "Value": 1,
+              "Text": "On"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "vorschauzeit",
+          "title": "Preview Time",
+          "width": 200,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 13,
+          "attribute": "Gdm:Haltestelle.VorschauZeit",
+          "helpId": 398,
+          "SetItems": [],
+          "inputType": "TimeInterval",
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "importstatus",
+          "title": "Import State",
+          "width": 200,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 14,
+          "attribute": "Gdm:Haltestelle.ImportStatus",
+          "helpId": 399,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "commentary",
+          "title": "Commentary",
+          "width": 200,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 17,
+          "attribute": "Gdm:Haltestelle.Commentary",
+          "helpId": 2390,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "assetpictureindex",
+          "title": "Picture",
+          "width": 200,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 21,
+          "attribute": "Gdm:Haltestelle.AssetPictureIndex",
+          "helpId": 5158,
+          "refTable": "Gdm:AssetPicture",
+          "refAttribute": "Gdm:AssetPicture.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "isdepot",
+          "title": "Depot",
+          "width": 200,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 23,
+          "attribute": "Gdm:Haltestelle.IsDepot",
+          "helpId": 99999,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "No"
+            },
+            {
+              "Value": 1,
+              "Text": "Yes"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": [
+        {
+          "Name": "primarykeyduid",
+          "Title": "Stop",
+          "Table": "gdm:haltestelle",
+          "CanSelectAllAsDependsOn": false,
+          "IsVisible": true,
+          "SelectFirstValue": false,
+          "FilterAttribute": "Gdm:Linie.LinienArt",
+          "FilterValue": "0",
+          "IsTransportAuthoritySpecific": true,
+          "IsMultiOwnedRouteTransportAuthoritySpecific": false,
+          "OrderValuesAlphabetically": false,
+          "AllowMultipleSelection": false
+        }
+      ]
+    },
+    {
+      "Name": "Gdm:Haltepunkt",
+      "Id": "61",
+      "HelpId": "447",
+      "Title": "stoppoints",
+      "ChildName": "",
+      "ChildTableName": "",
+      "MapDisplay": true,
+      "RepPriority": 1,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:Haltepunkt.Idx",
+          "helpId": 447,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "parenttableindex",
+          "title": "stopid",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:Haltepunkt.HaltestellenIndex",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stopname",
+          "title": "Stop",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:Haltestelle.kurzbezeichner",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stoppointnumber",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:Haltepunkt.Nummer",
+          "helpId": 449,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "longdescription",
+          "title": "Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:Netzpunkt.Langbezeichner",
+          "helpId": 451,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "haltebereich1",
+          "title": "Stopping Zone 1",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 7,
+          "attribute": "Gdm:Haltepunkt.Haltebereich1",
+          "helpId": 454,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "haltebereich2",
+          "title": "Stopping Zone 2",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 8,
+          "attribute": "Gdm:Haltepunkt.Haltebereich2",
+          "helpId": 455,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "dfizieltext",
+          "title": "DPI Destination Text",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 9,
+          "attribute": "Gdm:Netzpunkt.DefaultDFIZielkenIndex",
+          "helpId": 456,
+          "refTable": "Gdm:DFIZielkennung",
+          "refAttribute": "Gdm:DFIZielkennung.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "radioarea",
+          "title": "Radio area",
+          "width": 100,
+          "type": "string",
+          "filter": "dropdown",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 10,
+          "attribute": "Gdm:Netzpunkt.FunkbereichIndex",
+          "helpId": 457,
+          "refTable": "Gdm:Funkbereich",
+          "refAttribute": "Gdm:Funkbereich.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "anzeigeprioritaet",
+          "title": "Display Prio.",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 11,
+          "attribute": "Gdm:Netzpunkt.DefaultAnzeigePrio",
+          "helpId": 458,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "1"
+            },
+            {
+              "Value": 2,
+              "Text": "2"
+            },
+            {
+              "Value": 3,
+              "Text": "3"
+            },
+            {
+              "Value": 4,
+              "Text": "4"
+            },
+            {
+              "Value": 5,
+              "Text": "5"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "farezone",
+          "title": "Tariff Zone",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 12,
+          "attribute": "Gdm:Haltepunkt.ZoneWabeIndex",
+          "helpId": 459,
+          "refTable": "Gdm:ZoneWabe",
+          "refAttribute": "Gdm:ZoneWabe.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "latitude",
+          "title": "Latitude",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 13,
+          "attribute": "Gdm:NetzpunktKoordinaten.NetzpunktKoordinateY",
+          "helpId": 461,
+          "SetItems": [],
+          "inputType": "DmsCoordinate",
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "longitude",
+          "title": "Longitude",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 14,
+          "attribute": "Gdm:NetzpunktKoordinaten.NetzpunktKoordinateX",
+          "helpId": 460,
+          "SetItems": [],
+          "inputType": "DmsCoordinate",
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "gpskompassrichtung",
+          "title": "Heading",
+          "width": 100,
+          "type": "text",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 15,
+          "attribute": "Gdm:NetzpunktKoordinaten.GPSKompRichtung",
+          "helpId": 464,
+          "SetItems": [],
+          "inputType": "Numeric",
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "gpslocation",
+          "title": "GNSS Location",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:NetzpunktKoordinaten.GPSOrtungEin",
+          "helpId": 465,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "for on-/off-route detection only"
+            },
+            {
+              "Value": 1,
+              "Text": "for location"
+            },
+            {
+              "Value": 2,
+              "Text": "not for location"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "tracknumber",
+          "title": "Platform Number",
+          "width": 100,
+          "type": "text",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 17,
+          "attribute": "Gdm:Haltepunkt.GleisNummer",
+          "helpId": 466,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "externalstoppointid",
+          "title": "Global Stop Point ID",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 20,
+          "attribute": "Gdm:Haltepunkt.ExternalId",
+          "helpId": 9248,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "earlycompensation",
+          "title": "Early Compensation",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 21,
+          "attribute": "Gdm:Haltepunkt.VerfruehKompensierbar",
+          "helpId": 474,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "No"
+            },
+            {
+              "Value": 1,
+              "Text": "Yes"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeimportstate",
+          "title": "Import State",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 23,
+          "attribute": "Gdm:Haltepunkt.ImportStatus",
+          "helpId": 477,
+          "refTable": "Gdm:HaltestellenBereich",
+          "refAttribute": "Gdm:HaltestellenBereich.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributecommentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 24,
+          "attribute": "Gdm:Haltepunkt.Commentary",
+          "helpId": 2391,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeibisbezeichner",
+          "title": "IBIS Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 25,
+          "attribute": "Gdm:Haltepunkt.IBISBezeichner",
+          "helpId": 2430,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeinterchangetext",
+          "title": "Interchange Text",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 28,
+          "attribute": "Gdm:Haltepunkt.TransferTextIndex",
+          "helpId": 2740,
+          "refTable": "Gdm:FahrzeugUmsteigeText",
+          "refAttribute": "Gdm:FahrzeugUmsteigeText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributefahrzeugansagetext",
+          "title": "Veh. Announcement Text",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 30,
+          "attribute": "Gdm:Haltepunkt.AnnouncementIndex",
+          "helpId": 0,
+          "refTable": "Gdm:FahrzeugAnsageText",
+          "refAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributehalteart",
+          "title": "Stopping Type",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 31,
+          "attribute": "Gdm:Haltepunkt.HalteArt",
+          "helpId": 0,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "Required stop"
+            },
+            {
+              "Value": 2,
+              "Text": "Stop-on-request"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:NetzpunktVerbindung",
+      "Id": "97",
+      "HelpId": "2104",
+      "Title": "links",
+      "ChildName": "",
+      "ChildTableName": "",
+      "MapDisplay": false,
+      "RepPriority": 2,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:NetzpunktVerbindung.Idx",
+          "helpId": 2104,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributefrom",
+          "title": "From",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:NetzpunktVerbindung.NetzpunktVonIndex",
+          "helpId": 2106,
+          "refTable": "Gdm:Netzpunkt",
+          "refAttribute": "Gdm:Netzpunkt.Idx",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeto",
+          "title": "To",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:NetzpunktVerbindung.NetzpunktBisIndex",
+          "helpId": 2107,
+          "refTable": "Gdm:Netzpunkt",
+          "refAttribute": "Gdm:Netzpunkt.Idx",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributebetriebszweig",
+          "title": "Opr. Branch",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:NetzpunktVerbindung.BetriebsZweigIndex",
+          "helpId": 2108,
+          "refTable": "Gdm:BetriebsZweig",
+          "refAttribute": "Gdm:BetriebsZweig.Idx",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributedistance",
+          "title": "Distance",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:NetzpunktVerbindung.NPVerbindungsDistanz",
+          "helpId": 2109,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeroutingdistance",
+          "title": "Routing Distance",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:NetzpunktVerbindung.RoutingDistance",
+          "helpId": 99999,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributediffsuppliedvs",
+          "title": "Difference Supplied Distance vs. Routing",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 6,
+          "attribute": "enum:LinksField.DiffSuppliedVsRoutingDistance",
+          "helpId": 2109,
+          "SetItems": [],
+          "inputType": "Numeric",
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributedistancestatus",
+          "title": "Overwrite Distances",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 7,
+          "attribute": "Gdm:NetzpunktVerbindung.DistanzStatus",
+          "helpId": 2510,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeshorttripnumber",
+          "title": "Short Trip Number",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 8,
+          "attribute": "Gdm:NetzpunktVerbindung.KurzStreckenNummer",
+          "helpId": 2110,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributevalidatoraddon",
+          "title": "Validator Add-on",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 9,
+          "attribute": "Gdm:NetzpunktVerbindung.EntwerterZusatz",
+          "helpId": 2111,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributeimportstate",
+          "title": "Import State",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 20,
+          "attribute": "Gdm:NetzpunktVerbindung.ImportStatus",
+          "helpId": 9458,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributecommentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 21,
+          "attribute": "Gdm:NetzpunktVerbindung.Commentary",
+          "helpId": 2370,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributelockshapepoints",
+          "title": "Lock shapepoints",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 22,
+          "attribute": "Gdm:NetzpunktVerbindung.LockShapePoints",
+          "helpId": 99999,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:TagesartGueltigkeit",
+      "Id": "55",
+      "HelpId": "784",
+      "Title": "calendar",
+      "ChildName": "daytypes",
+      "ChildTableName": "Gdm:Tagesart",
+      "MapDisplay": false,
+      "RepPriority": 0,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:TagesartGueltigkeit.Idx",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "weekday",
+          "title": "Weekday",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:DayTypeValidity.Weekday",
+          "helpId": 2106,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "Sunday"
+            },
+            {
+              "Value": 2,
+              "Text": "Monday"
+            },
+            {
+              "Value": 3,
+              "Text": "Tuesday"
+            },
+            {
+              "Value": 4,
+              "Text": "Wednesday"
+            },
+            {
+              "Value": 5,
+              "Text": "Thursday"
+            },
+            {
+              "Value": 6,
+              "Text": "Friday"
+            },
+            {
+              "Value": 7,
+              "Text": "Saturday"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "validdate",
+          "title": "Valid on",
+          "width": 100,
+          "type": "date",
+          "filter": "date",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:DayTypeValidity.Validdate",
+          "helpId": 785,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "kombitagesartindex",
+          "title": "Operational Day Type",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:TagesartGueltigkeit.Kombitagesartindex",
+          "helpId": 0,
+          "refTable": "Gdm:KombiTagesart",
+          "refAttribute": "Gdm:KombiTagesart.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "dayqualityindex",
+          "title": "Day Category",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:TagesartGueltigkeit.DayQualityIndex",
+          "helpId": 0,
+          "refTable": "Gdm:DayQuality",
+          "refAttribute": "Gdm:DayQuality.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "commentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:DayTypeValidity.Weekday",
+          "helpId": 2106,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "blockcount",
+          "title": ">> Blocks",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:TagesartGueltigkeit.Idx",
+          "helpId": 1278,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "routecount",
+          "title": ">> Routes",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:TagesartGueltigkeit.Idx",
+          "helpId": 1278,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:Tagesart",
+      "Id": "154",
+      "HelpId": "7252",
+      "Title": "daytypes",
+      "ChildName": "",
+      "ChildTableName": "",
+      "MapDisplay": false,
+      "RepPriority": 0,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:Tagesart.Idx",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "parenttableindex",
+          "title": "daytypeid",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:TagesartGueltigkeit.Idx",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "nummer",
+          "title": "Number",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:Tagesart.tagesart",
+          "helpId": 2106,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "name",
+          "title": "Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:Tagesart.Bezeichner",
+          "helpId": 2106,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "description",
+          "title": "Abbr.",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:Tagesart.Kurzbezeichner",
+          "helpId": 785,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "daytypegroup",
+          "title": "Day Type Group",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:Tagesart.tagesartgruppenindex",
+          "helpId": 0,
+          "refTable": "Gdm:TagesArtGruppe",
+          "refAttribute": "Gdm:TagesArtGruppe.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "commentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:Tagesart.Commentary",
+          "helpId": 2106,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "starttagesartindex",
+          "title": "Blocks",
+          "width": 200,
+          "type": "list",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 11,
+          "attribute": "Gdm:fahrzeugumlauf.idx",
+          "helpId": 7915,
+          "refTable": "Gdm:Fahrzeugumlauf",
+          "representationTable": "Gdm:Fahrzeugumlauf",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": true,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:TagesArtGruppe",
+      "Id": "262",
+      "HelpId": "644",
+      "Title": "daytypegroup",
+      "ChildName": "",
+      "ChildTableName": "",
+      "TableType": "simple",
+      "MapDisplay": false,
+      "RepPriority": 0,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:TagesArtGruppe.Idx",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "tagesartgruppen",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:TagesArtGruppe.TagesArtGruppen",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "kurzbezeichner",
+          "title": "Abbr.",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:TagesArtGruppe.Kurzbezeichner",
+          "helpId": 646,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "bezeichner",
+          "title": "Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:TagesArtGruppe.Bezeichner",
+          "helpId": 645,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "isdefault",
+          "title": "Is default",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:TagesArtGruppe.IsDefault",
+          "helpId": 1970,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "No"
+            },
+            {
+              "Value": 1,
+              "Text": "Yes"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:KombiTagesart",
+      "Id": "305",
+      "HelpId": "7521",
+      "Title": "operationaldaytype",
+      "ChildName": "",
+      "ChildTableName": "",
+      "TableType": "simple",
+      "MapDisplay": false,
+      "RepPriority": 0,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:KombiTagesart.Idx",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "nummer",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:KombiTagesart.Nummer",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "kurzbezeichner",
+          "title": "Abbr.",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:KombiTagesart.Kurzbezeichner",
+          "helpId": 1268,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "bezeichner",
+          "title": "Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:KombiTagesart.Bezeichner",
+          "helpId": 99993,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "idx",
+          "title": "Assignment of Day Type to Operational Day Type",
+          "width": 100,
+          "type": "list",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:KombiTagesart.idx",
+          "helpId": 7915,
+          "refTable": "Gdm:ZuordKombiTagesart",
+          "representationTable": "Gdm:Tagesart",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "tagesartgruppenindex",
+          "title": "Day Type Group",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:KombiTagesart.TagesartGruppenIndex",
+          "helpId": 1272,
+          "refTable": "Gdm:TagesArtGruppe",
+          "refAttribute": "Gdm:TagesArtGruppe.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "commentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:KombiTagesart.Commentary",
+          "helpId": 99996,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "dayqualityindex",
+          "title": "Day Category",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 6,
+          "attribute": "Gdm:KombiTagesart.DayQualityIndex",
+          "helpId": 99996,
+          "refTable": "Gdm:DayQuality",
+          "refAttribute": "Gdm:DayQuality.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "calendarcount",
+          "title": ">> Calendar",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 7,
+          "attribute": "calendarcount",
+          "helpId": 1277,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "usageTable": "TagesartGueltigkeit",
+          "usageColumn": "KOMBITAGESARTINDEX",
+          "fontColor": false
+        },
+        {
+          "field": "blockcount",
+          "title": ">> Blocks",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 8,
+          "attribute": "blockcount",
+          "helpId": 1278,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "usageProvider": "CombiDaytypeInBlocks",
+          "fontColor": false
+        },
+        {
+          "field": "tripcount",
+          "title": ">> Trips",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 9,
+          "attribute": "tripcount",
+          "helpId": 1276,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "usageProvider": "CombiDaytypeInTrips",
+          "fontColor": false
+        },
+        {
+          "field": "transferdefinitioncount",
+          "title": ">> Transfer Definitions",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 10,
+          "attribute": "transferdefinitioncount",
+          "helpId": 1279,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "usageProvider": "CombiDaytypeInTransferDefinitions",
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:ActiveSessions",
+      "Id": "305",
+      "HelpId": "7521",
+      "Title": "activesessions",
+      "ChildName": "",
+      "ChildTableName": "",
+      "TableType": "simple",
+      "MapDisplay": false,
+      "RepPriority": 0,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:sys_baseversion.Idx",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "nummer",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:sys_baseversion.BvNumber",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "description",
+          "title": "Abbr.",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:sys_baseversion.Description",
+          "helpId": 1268,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "name",
+          "title": "Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:VldBenutzer.Name",
+          "helpId": 99993,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "activity",
+          "title": "LocalizedString.activity",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:vldbenutzer.activity",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "activitystarttime",
+          "title": "Begin",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:vldbenutzer.activitystarttime",
+          "helpId": 1268,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "nosessions",
+          "title": "No. of Sessions",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 6,
+          "attribute": "Gdm:vldbenutzer.nosessions",
+          "helpId": 99993,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    },
+    {
+      "Name": "Gdm:LinienFahrweg",
+      "Id": "111",
+      "HelpId": "497",
+      "Title": "patterns",
+      "ChildName": "patternsequences",
+      "ChildTableName": "Gdm:I_PatternSequence",
+      "MapDisplay": true,
+      "RepPriority": 2,
+      "Columns": [
+        {
+          "field": "primarykeyduid",
+          "title": "Id",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "Gdm:LinienFahrweg.Idx",
+          "helpId": 380,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "routeindex",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:LinienFahrweg.LinienIndex",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "patternnumber",
+          "title": "Number",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:LinienFahrweg.Nummer",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "description",
+          "title": "Abbr.",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:LinienFahrweg.Kurzbezeichner",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "longdescription",
+          "title": "Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:LinienFahrweg.Langbezeichner",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "direction",
+          "title": "Direction",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:LinienFahrweg.Richtung",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "ibisbezeichner",
+          "title": "IBIS Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:LinienFahrweg.OBCDesc",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "darstellung",
+          "title": "Representation",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 6,
+          "attribute": "Gdm:LinienFahrweg.Darstellung",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "attributetype",
+          "title": "Type",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 7,
+          "attribute": "Gdm:LinienFahrweg.Typ",
+          "helpId": 381,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "Normal"
+            },
+            {
+              "Value": 2,
+              "Text": "Exit"
+            },
+            {
+              "Value": 3,
+              "Text": "Entry"
+            },
+            {
+              "Value": 4,
+              "Text": "Approach"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "dfilinienkennung",
+          "title": "DPI Route Code",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 9,
+          "attribute": "Gdm:LinienFahrweg.Nummer",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "relativetrip",
+          "title": "Relative Trip",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 10,
+          "attribute": "Gdm:LinienFahrweg.RelativerFahrplan",
+          "helpId": 381,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "No activity"
+            },
+            {
+              "Value": 1,
+              "Text": "Message locked"
+            },
+            {
+              "Value": 2,
+              "Text": "Auto."
+            },
+            {
+              "Value": 3,
+              "Text": "Manual"
+            },
+            {
+              "Value": 4,
+              "Text": "After doors close"
+            },
+            {
+              "Value": 5,
+              "Text": "1 m after closing the door"
+            },
+            {
+              "Value": 6,
+              "Text": "On opening the door"
+            },
+            {
+              "Value": 7,
+              "Text": "On opening and closing the door"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "importstate",
+          "title": "Import State",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 11,
+          "attribute": "Gdm:LinienFahrweg.ImportStatus",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "symboldatei",
+          "title": "Symbol File",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 12,
+          "attribute": "Gdm:LinienFahrweg.BildDateiIndex",
+          "helpId": 381,
+          "refTable": "Gdm:BildDatei",
+          "refAttribute": "Gdm:BildDatei.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "image",
+          "title": "Preview",
+          "width": 100,
+          "type": "image",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 13,
+          "attribute": "Gdm:LinienFahrweg.BildDatei",
+          "helpId": 0,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "commentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 15,
+          "attribute": "Gdm:LinienFahrweg.Commentary",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "transportmodetextindex",
+          "title": "Transport Mode Text",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 22,
+          "attribute": "Gdm:LinienFahrweg.TransportModeTextIndex",
+          "helpId": 381,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": [
+        {
+          "Name": "routeindex",
+          "Title": "Route",
+          "Table": "gdm:linie",
+          "CanSelectAllAsDependsOn": false,
+          "IsVisible": true,
+          "SelectFirstValue": false,
+          "FilterValue": "0",
+          "IsTransportAuthoritySpecific": false,
+          "IsMultiOwnedRouteTransportAuthoritySpecific": false,
+          "OrderValuesAlphabetically": false,
+          "AllowMultipleSelection": false
+        },
+        {
+          "Name": "patternindex",
+          "Title": "Pattern",
+          "Table": "gdm:LinienFahrweg",
+          "CanSelectAllAsDependsOn": false,
+          "IsVisible": true,
+          "SelectFirstValue": false,
+          "FilterValue": "0",
+          "IsTransportAuthoritySpecific": false,
+          "IsMultiOwnedRouteTransportAuthoritySpecific": false,
+          "OrderValuesAlphabetically": false,
+          "AllowMultipleSelection": false
+        }
+      ]
+    },
+    {
+      "Name": "Gdm:I_PatternSequence",
+      "Id": "10100",
+      "HelpId": "1938",
+      "Title": "patternsequences",
+      "ChildName": "",
+      "ChildTableName": "",
+      "MapDisplay": true,
+      "RepPriority": 2,
+      "Columns": [
+        {
+          "field": "parenttableindex",
+          "title": "patternid",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 1,
+          "attribute": "Gdm:I_PatternSequence.PatternIndex",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "primarykeyduid",
+          "title": "Sequence Number",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 2,
+          "attribute": "Gdm:I_PatternSequence.SequenceNumber",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stoppingpoint",
+          "title": "Stopping Point",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 3,
+          "attribute": "Gdm:I_PatternSequence.GeonodeIndex",
+          "helpId": 448,
+          "refTable": "Gdm:Haltepunkt",
+          "refAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stopname",
+          "title": "Stop Name",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 4,
+          "attribute": "Gdm:Haltestelle.Langbezeichner",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stoppingpointname",
+          "title": "Stopping Point Name",
+          "width": 100,
+          "type": "number",
+          "filter": "numeric",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 5,
+          "attribute": "Gdm:Netzpunkt.Langbezeichner",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "distance",
+          "title": "Distance",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 7,
+          "attribute": "Gdm:I_PatternSequence.AttributeDistance",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "routingdistance",
+          "title": "Routing Distance",
+          "width": 100,
+          "type": "string",
+          "filter": "false",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 9,
+          "attribute": "Gdm:NetzpunktVerbindung.RoutingDistance",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "produktiv",
+          "title": "Productive",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 10,
+          "attribute": "Gdm:I_PatternSequence.PrevPatternLinkProductive",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "No"
+            },
+            {
+              "Value": 1,
+              "Text": "Yes"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "distancestatus",
+          "title": "Overwrite Distances",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 11,
+          "attribute": "Gdm:NetzpunktVerbindung.DistanzStatus",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "Locked"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "importstate",
+          "title": "Import State",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 12,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.ImportStatus",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 5,
+              "Text": "Adjusted"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "commentary",
+          "title": "Commentary",
+          "width": 100,
+          "type": "string",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 16,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.Commentary",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "patternAnnoucement",
+          "title": "Veh. Announcement Text",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 18,
+          "attribute": "enum:PatternSequenceAttr.AnnouncementText",
+          "helpId": 448,
+          "refTable": "Gdm:FahrzeugAnsageText",
+          "refAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "patternvalidity",
+          "title": "patternValidity",
+          "width": 100,
+          "type": "number",
+          "filter": "text",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 18,
+          "attribute": "enum:PatternSequenceAttr.AnnouncementText",
+          "helpId": 448,
+          "refTable": "Gdm:FahrzeugAnsageText",
+          "refAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": true
+        },
+        {
+          "field": "fahrzeugzieltext",
+          "title": "Vehicle Destination Text",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 20,
+          "attribute": "Gdm:LinienFahrwegNPVAttribut.ZielTextIndex",
+          "helpId": 448,
+          "refTable": "Gdm:FahrzeugZielText",
+          "refAttribute": "Gdm:FahrzeugZielText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "vehileDestinationValidity",
+          "title": "vehileDestinationValidity",
+          "width": 100,
+          "type": "number",
+          "filter": "text",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 18,
+          "attribute": "Gdm:LinienFahrwegNPVAttribut.ZielTextIndex",
+          "helpId": 448,
+          "refTable": "Gdm:FahrzeugZielText",
+          "refAttribute": "Gdm:FahrzeugZielText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": true
+        },
+        {
+          "field": "announcementFragmentsText",
+          "title": "Veh. Announcement Fragments",
+          "width": 100,
+          "type": "list",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 20,
+          "attribute": "enum:PatternSequenceAttr.AnnouncementFragments",
+          "helpId": 448,
+          "refTable": "Gdm:FahrzeugZielText",
+          "refAttribute": "Gdm:FahrzeugZielText.Idx",
+          "representationTable": "Gdm:FahrzeugZielText",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "transfertext",
+          "title": "Interchange Text",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 21,
+          "attribute": "LinienFahrwegNPVAttribut.UmsteigeTextIndex",
+          "helpId": 534,
+          "refTable": "Gdm:FahrzeugUmsteigeText",
+          "refAttribute": "Gdm:FahrzeugUmsteigeText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "interchangeValidity",
+          "title": "interchangeValidity",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 21,
+          "attribute": "LinienFahrwegNPVAttribut.UmsteigeTextIndex",
+          "helpId": 534,
+          "refTable": "Gdm:FahrzeugUmsteigeText",
+          "refAttribute": "Gdm:FahrzeugUmsteigeText.Idx",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": true
+        },
+        {
+          "field": "dpidestinationtext",
+          "title": "DPI Destination Text",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 22,
+          "attribute": "LinienFahrwegNPAttribute.DFIZielkennungsIndex",
+          "helpId": 528,
+          "refTable": "Gdm:DFIZielkennung",
+          "refAttribute": "Gdm:DFIZielkennung.Idx",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "dpiDestinationValidity",
+          "title": "dpiDestinationValidity",
+          "width": 100,
+          "type": "text",
+          "filter": "text",
+          "hidden": true,
+          "locked": false,
+          "orderIndex": 22,
+          "attribute": "LinienFahrwegNPAttribute.DFIZielkennungsIndex",
+          "helpId": 528,
+          "refTable": "Gdm:DFIZielkennung",
+          "refAttribute": "Gdm:DFIZielkennung.Idx",
+          "SetItems": [],
+          "isreadonly": true,
+          "isLinkButtonVisible": false,
+          "fontColor": true
+        },
+        {
+          "field": "beacons",
+          "title": "Beacons",
+          "width": 100,
+          "type": "list",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 0,
+          "attribute": "I_PatternSequence.prevlinkindex",
+          "helpId": 0,
+          "refTable": "Gdm:Bake",
+          "refAttribute": "Gdm:Bake.Idx",
+          "representationTable": "Gdm:Bake",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "terminalstop",
+          "title": "Terminal Stop",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 24,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.EndHaltestelle",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "X"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "stoppingtype",
+          "title": "Stopping Type",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 25,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.HalteArt",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 1,
+              "Text": "Required stop"
+            },
+            {
+              "Value": 2,
+              "Text": "Stop-on-request"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "destinationdisplaychangeibisplus",
+          "title": "Trigger Destination Display",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 27,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.ZielTextDistanzIBISplus",
+          "helpId": 556,
+          "SetItems": [
+            {
+              "Value": -32766,
+              "Text": "Change on door open"
+            },
+            {
+              "Value": -32767,
+              "Text": "Change during stop stepping"
+            },
+            {
+              "Value": -32768,
+              "Text": "Reset to Default"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "announcementtextdistance",
+          "title": "Trigger Announcement",
+          "width": 100,
+          "type": "text",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 30,
+          "attribute": "Gdm:LinienFahrwegNPVAttribut.AnsageTextDistanz",
+          "helpId": 448,
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "mfddestinationconfig",
+          "title": "MFD destination configuration",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 31,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.MFDDestinationConfig",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 100,
+              "Text": "virtual destination"
+            },
+            {
+              "Value": 101,
+              "Text": "Use next pattern"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "mfdtransferscreen",
+          "title": "MFD Transfer Screen",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 33,
+          "attribute": "Gdm:LinienFahrwegNPAttribute.MFAAnschlussBildschirm",
+          "helpId": 448,
+          "SetItems": [
+            {
+              "Value": 0,
+              "Text": "Off"
+            },
+            {
+              "Value": 1,
+              "Text": "On"
+            }
+          ],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "timecontrolledannouncementsg2",
+          "title": "Time-controlled Announcements",
+          "width": 100,
+          "type": "list",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 36,
+          "attribute": "Gdm:InboardAnnouncement",
+          "helpId": 448,
+          "refTable": "Gdm:FahrzeugAnsageText",
+          "refAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "representationTable": "Gdm:FahrzeugAnsageText",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        },
+        {
+          "field": "chargingpoint",
+          "title": "Charging Point",
+          "width": 100,
+          "type": "dropdown",
+          "filter": "text",
+          "hidden": false,
+          "locked": false,
+          "orderIndex": 40,
+          "attribute": "I_PatternSequence.StopPointIndex",
+          "helpId": 448,
+          "refTable": "Gdm:ChargingPoint",
+          "refAttribute": "Gdm:ChargingPoint.Idx",
+          "representationTable": "Gdm:ChargingPoint",
+          "SetItems": [],
+          "isreadonly": false,
+          "isLinkButtonVisible": false,
+          "fontColor": false
+        }
+      ],
+      "Parameters": []
+    }
+  ],
+  "GuiMenuItem": [],
+  "RelatedTablesContainer": [
+    {
+      "Id": 100612,
+      "GdmBaseTable": "Gdm:NetworkChangeManagement",
+      "UseCleanUpManager": true,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:NetworkChangeIntermPointAsgn.ParentNetworkChangeIndex",
+          "GdmAttribute": "ParentNetworkChangeIndex",
+          "GdmTable": "NetworkChangeIntermPointAsgn",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100616,
+      "GdmBaseTable": "Gdm:NetworkChangeLinkAsgn",
+      "UseCleanUpManager": true,
+      "RelatedTables": []
+    },
+    {
+      "Id": 100614,
+      "GdmBaseTable": "Gdm:NetworkChangeStopPAsgn",
+      "UseCleanUpManager": true,
+      "RelatedTables": []
+    },
+    {
+      "Id": 100136,
+      "GdmBaseTable": "Gdm:Fahrt",
+      "UseCleanUpManager": true,
+      "RelatedTables": []
+    },
+    {
+      "Id": 100154,
+      "GdmBaseTable": "Gdm:Tagesart",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:FahrzeugUmlauf.StartTagesArtIndex",
+          "GdmAttribute": "StartTagesArtIndex",
+          "GdmTable": "FahrzeugUmlauf",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:TPAnschlussDefinition.TagesArtIndex",
+          "GdmAttribute": "TagesArtIndex",
+          "GdmTable": "TPAnschlussDefinition",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:TagesartGueltigkeit.TagesartIndex",
+          "GdmAttribute": "TagesartIndex",
+          "GdmTable": "TagesartGueltigkeit",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:Fahrt.TagesArtIndex",
+          "GdmAttribute": "TagesArtIndex",
+          "GdmTable": "Fahrt",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100190,
+      "GdmBaseTable": "Gdm:OLIFLinienAttribute",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:Linie.OLIFLinienAttributeIndex",
+          "GdmAttribute": "OLIFLinienAttributeIndex",
+          "GdmTable": "Linie",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100061,
+      "GdmBaseTable": "Gdm:Haltepunkt",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoNodeAreaAsgn.GeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "GeoNodeIndex",
+          "GdmTable": "GeoNodeAreaAsgn",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:GeoNodeTargetAsgn.GeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "GeoNodeIndex",
+          "GdmTable": "GeoNodeTargetAsgn",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:ZuordZSANetzpunkt.NetzpunktIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "NetzpunktIndex",
+          "GdmTable": "ZuordZSANetzpunkt",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:TrackSectionGeoNodeAsgn.GeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "GeoNodeIndex",
+          "GdmTable": "TrackSectionGeoNodeAsgn",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:RoutenVerlauf.NetzpunktIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "NetzpunktIndex",
+          "GdmTable": "RoutenVerlauf",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": true,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:LinienfahrwegNPAttribute.StandGeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "StandGeoNodeIndex",
+          "GdmTable": "LinienfahrwegNPAttribute",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:OLIFZuordHPZuFremdAE.HaltePunktIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "HaltePunktIndex",
+          "GdmTable": "OLIFZuordHPZuFremdAE",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:Netzpunkt.Idx",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "Netzpunkt",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:NetzpunktKoordinaten.NetzpunktIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "NetzpunktIndex",
+          "GdmTable": "NetzpunktKoordinaten",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100497,
+      "GdmBaseTable": "Gdm:LinienFahrweg",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoNodeAreaAsgn.GeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "GeoNodeIndex",
+          "GdmTable": "GeoNodeAreaAsgn",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:GeoNodeTargetAsgn.GeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "GeoNodeIndex",
+          "GdmTable": "GeoNodeTargetAsgn",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:ZuordZSANetzpunkt.NetzpunktIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "NetzpunktIndex",
+          "GdmTable": "ZuordZSANetzpunkt",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:TrackSectionGeoNodeAsgn.GeoNodeIndex",
+          "SourceAttribute": "Gdm:Haltepunkt.NetzpunktIndex",
+          "GdmAttribute": "GeoNodeIndex",
+          "GdmTable": "TrackSectionGeoNodeAsgn",
+          "GdmSourceTable": "Haltepunkt",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:Fahrt.LinienFahrwegIndex",
+          "GdmAttribute": "LinienFahrwegIndex",
+          "GdmTable": "Fahrt",
+          "UseCleanUpManager": true,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:RoutenVerlauf.RoutenIndex",
+          "SourceAttribute": "Gdm:LinienFahrweg.RoutenIndex",
+          "GdmAttribute": "RoutenIndex",
+          "GdmTable": "RoutenVerlauf",
+          "GdmSourceTable": "LinienFahrweg",
+          "GdmSourceAttribute": "RoutenIndex",
+          "UseCleanUpManager": true,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:Route.Idx",
+          "SourceAttribute": "Gdm:LinienFahrweg.RoutenIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "Route",
+          "GdmSourceTable": "LinienFahrweg",
+          "GdmSourceAttribute": "RoutenIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100336,
+      "GdmBaseTable": "Gdm:ZoneWabe",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:Haltestelle.ZoneWabeIndex",
+          "SourceAttribute": "Gdm:ZoneWabe.Idx",
+          "GdmAttribute": "ZoneWabeIndex",
+          "GdmTable": "Haltestelle",
+          "GdmSourceTable": "ZoneWabe",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:Haltepunkt.ZoneWabeIndex",
+          "GdmAttribute": "ZoneWabeIndex",
+          "GdmTable": "Haltepunkt",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100067,
+      "GdmBaseTable": "Gdm:Bake",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:NetzpunktKoordinaten.NetzpunktIndex",
+          "SourceAttribute": "Gdm:Bake.NetzpunktIndex",
+          "GdmAttribute": "NetzpunktIndex",
+          "GdmTable": "NetzpunktKoordinaten",
+          "GdmSourceTable": "Bake",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:NPVZwischenpunktAttribut.NPVZwischenpunktIndex",
+          "SourceAttribute": "Gdm:Bake.NetzpunktIndex",
+          "GdmAttribute": "NPVZwischenpunktIndex",
+          "GdmTable": "NPVZwischenpunktAttribut",
+          "GdmSourceTable": "Bake",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:LiFahrwegNPVZPAttribute.NPVZwischenpunktIndex",
+          "SourceAttribute": "Gdm:Bake.NetzpunktIndex",
+          "GdmAttribute": "NPVZwischenpunktIndex",
+          "GdmTable": "LiFahrwegNPVZPAttribute",
+          "GdmSourceTable": "Bake",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:Netzpunkt.Idx",
+          "SourceAttribute": "Gdm:Bake.NetzpunktIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "Netzpunkt",
+          "GdmSourceTable": "Bake",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 359001,
+      "GdmBaseTable": "Gdm:Speedpoint",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:NetzpunktKoordinaten.NetzpunktIndex",
+          "SourceAttribute": "Gdm:Speedpoint.NetzpunktIndex",
+          "GdmAttribute": "NetzpunktIndex",
+          "GdmTable": "NetzpunktKoordinaten",
+          "GdmSourceTable": "Speedpoint",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:NPVZwischenpunktAttribut.NPVZwischenpunktIndex",
+          "SourceAttribute": "Gdm:Speedpoint.NetzpunktIndex",
+          "GdmAttribute": "NPVZwischenpunktIndex",
+          "GdmTable": "NPVZwischenpunktAttribut",
+          "GdmSourceTable": "Speedpoint",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:Netzpunkt.Idx",
+          "SourceAttribute": "Gdm:Speedpoint.NetzpunktIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "Netzpunkt",
+          "GdmSourceTable": "Speedpoint",
+          "GdmSourceAttribute": "NetzpunktIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100034,
+      "GdmBaseTable": "Gdm:RoutenZiel",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:LinienFahrwegNPAttribute.PatternDestIndex",
+          "GdmAttribute": "PatternDestIndex",
+          "GdmTable": "LinienFahrwegNPAttribute",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100358,
+      "GdmBaseTable": "Gdm:SSBDFIZielText",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:LinienFahrwegNPAttribute.SSBDFIZielTextIndex",
+          "GdmAttribute": "SSBDFIZielTextIndex",
+          "GdmTable": "LinienFahrwegNPAttribute",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100322,
+      "GdmBaseTable": "Gdm:LinienSonderMaske",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:LinienFahrweg.LinienSonderMaskenIndex",
+          "GdmAttribute": "LinienSonderMaskenIndex",
+          "GdmTable": "LinienFahrweg",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100559,
+      "GdmBaseTable": "Gdm:PictureVariantType",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:AsgnPicVariantPicture.PictureVariantTypeIndex",
+          "GdmAttribute": "PictureVariantTypeIndex",
+          "GdmTable": "AsgnPicVariantPicture",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100000121,
+      "GdmBaseTable": "Gdm:Haltestelle",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceD.Idx",
+          "SourceAttribute": "Gdm:Haltestelle.GeoRefDIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceD",
+          "GdmSourceTable": "Haltestelle",
+          "GdmSourceAttribute": "GeoRefDIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100566,
+      "GdmBaseTable": "Gdm:Camera",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:Camera.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "Camera",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100049,
+      "GdmBaseTable": "Gdm:LSAAnforderung",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:LSAAnforderung.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "LSAAnforderung",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        },
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:LSAAnforderung.StopLineGeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "LSAAnforderung",
+          "GdmSourceAttribute": "StopLineGeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100364,
+      "GdmBaseTable": "Gdm:HaltestellenBereich",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceD.Idx",
+          "SourceAttribute": "Gdm:HaltestellenBereich.GeoRefDIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceD",
+          "GdmSourceTable": "HaltestellenBereich",
+          "GdmSourceAttribute": "GeoRefDIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100390,
+      "GdmBaseTable": "Gdm:Audiobox",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:Audiobox.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "Audiobox",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100513,
+      "GdmBaseTable": "Gdm:CentralizedTLPTrigPoint",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:CentralizedTLPTrigPoint.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "CentralizedTLPTrigPoint",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100008,
+      "GdmBaseTable": "Gdm:AnzeigeEinheit",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:AnzeigeEinheit.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "AnzeigeEinheit",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        },
+        {
+          "Attribute": "Gdm:ZuordHPAnzeigeEinheit.AnzeigeEinheitIndex",
+          "SourceAttribute": "Gdm:AnzeigeEinheit.Idx",
+          "GdmAttribute": "AnzeigeEinheitIndex",
+          "GdmTable": "ZuordHPAnzeigeEinheit",
+          "GdmSourceTable": "AnzeigeEinheit",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:ZuordHSAnzeigeEinheit.AnzeigeEinheitIndex",
+          "SourceAttribute": "Gdm:AnzeigeEinheit.Idx",
+          "GdmAttribute": "AnzeigeEinheitIndex",
+          "GdmTable": "ZuordHSAnzeigeEinheit",
+          "GdmSourceTable": "AnzeigeEinheit",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:ZuordAEAudioboxLSK.AnzeigeEinheitIndex",
+          "SourceAttribute": "Gdm:AnzeigeEinheit.Idx",
+          "GdmAttribute": "AnzeigeEinheitIndex",
+          "GdmTable": "ZuordAEAudioboxLSK",
+          "GdmSourceTable": "AnzeigeEinheit",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:DisplayUnitPaUnitAsgn.AnzeigeEinheitIndex",
+          "SourceAttribute": "Gdm:AnzeigeEinheit.Idx",
+          "GdmAttribute": "AnzeigeEinheitIndex",
+          "GdmTable": "DisplayUnitPaUnitAsgn",
+          "GdmSourceTable": "AnzeigeEinheit",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:BedarfsAnsageKonsole.AnzeigeEinheitIndex",
+          "SourceAttribute": "Gdm:AnzeigeEinheit.Idx",
+          "GdmAttribute": "AnzeigeEinheitIndex",
+          "GdmTable": "BedarfsAnsageKonsole",
+          "GdmSourceTable": "AnzeigeEinheit",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100301,
+      "GdmBaseTable": "Gdm:Kreuzung",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:Kreuzung.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "Kreuzung",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100006,
+      "GdmBaseTable": "Gdm:PACOS",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:PACOS.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "PACOS",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100007,
+      "GdmBaseTable": "Gdm:BeschallungsEinheit",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:BeschallungsEinheit.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "BeschallungsEinheit",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100539,
+      "GdmBaseTable": "Gdm:VehicleHomeBase",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:GeoReferenceM.Idx",
+          "SourceAttribute": "Gdm:VehicleHomeBase.GeoRefMIndex",
+          "GdmAttribute": "Idx",
+          "GdmTable": "GeoReferenceM",
+          "GdmSourceTable": "VehicleHomeBase",
+          "GdmSourceAttribute": "GeoRefMIndex",
+          "UseCleanUpManager": false,
+          "DeleteMode": 2
+        }
+      ]
+    },
+    {
+      "Id": 100186,
+      "GdmBaseTable": "Gdm:FahrzeugZielanzeigeTyp",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:Fahrzeug.FahrzeugZielanzTypIndex",
+          "SourceAttribute": "Gdm:FahrzeugZielanzeigeTyp.Idx",
+          "GdmAttribute": "FahrzeugZielanzTypIndex",
+          "GdmTable": "Fahrzeug",
+          "GdmSourceTable": "FahrzeugZielanzeigeTyp",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:FahrzeugZielTextInhalt.FahrzeugZielanzTypIndex",
+          "SourceAttribute": "Gdm:FahrzeugZielanzeigeTyp.Idx",
+          "GdmAttribute": "FahrzeugZielanzTypIndex",
+          "GdmTable": "FahrzeugZielTextInhalt",
+          "GdmSourceTable": "FahrzeugZielanzeigeTyp",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:ZuordWBZielText.FahrzeugZielanzTypIndex",
+          "SourceAttribute": "Gdm:FahrzeugZielanzeigeTyp.Idx",
+          "GdmAttribute": "FahrzeugZielanzTypIndex",
+          "GdmTable": "ZuordWBZielText",
+          "GdmSourceTable": "FahrzeugZielanzeigeTyp",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100030,
+      "GdmBaseTable": "Gdm:FahrzeugAnsageText",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:ZuordAnsageFragment.AnsageTextIndex",
+          "SourceAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "GdmAttribute": "AnsageTextIndex",
+          "GdmTable": "ZuordAnsageFragment",
+          "GdmSourceTable": "FahrzeugAnsageText",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:Haltestelle.FahrzeugAnsageTextIndex",
+          "SourceAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "GdmAttribute": "FahrzeugAnsageTextIndex",
+          "GdmTable": "Haltestelle",
+          "GdmSourceTable": "FahrzeugAnsageText",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:Haltepunkt.AnnouncementIndex",
+          "SourceAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "GdmAttribute": "AnnouncementIndex",
+          "GdmTable": "Haltepunkt",
+          "GdmSourceTable": "FahrzeugAnsageText",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        },
+        {
+          "Attribute": "Gdm:LinienFahrwegNPVAttribut.FahrzeugAnsageTextIndex",
+          "SourceAttribute": "Gdm:FahrzeugAnsageText.Idx",
+          "GdmAttribute": "FahrzeugAnsageTextIndex",
+          "GdmTable": "LinienFahrwegNPVAttribut",
+          "GdmSourceTable": "FahrzeugAnsageText",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 100032,
+      "GdmBaseTable": "Gdm:DayQuality",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:TagesartGueltigkeit.DayQualityIndex",
+          "SourceAttribute": "Gdm:DayQuality.Idx",
+          "GdmAttribute": "DayQualityIndex",
+          "GdmTable": "TagesartGueltigkeit",
+          "GdmSourceTable": "DayQuality",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 0
+        }
+      ]
+    },
+    {
+      "Id": 1000337,
+      "GdmBaseTable": "Gdm:AnsageFragment",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:ZuordAnsageFragment.AnsageFragmentIndex",
+          "SourceAttribute": "Gdm:AnsageFragment.Idx",
+          "GdmAttribute": "AnsageFragmentIndex",
+          "GdmTable": "ZuordAnsageFragment",
+          "GdmSourceTable": "AnsageFragment",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100048,
+      "GdmBaseTable": "Gdm:FahrerMeldung",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:DriverMessageTAAsgn.DriverMessageIndex",
+          "SourceAttribute": "Gdm:FahrerMeldung.Idx",
+          "GdmAttribute": "DriverMessageIndex",
+          "GdmTable": "DriverMessageTAAsgn",
+          "GdmSourceTable": "FahrerMeldung",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        },
+        {
+          "Attribute": "Gdm:DriverMessageVehTypeAsgn.DriverMessageIndex",
+          "SourceAttribute": "Gdm:FahrerMeldung.Idx",
+          "GdmAttribute": "DriverMessageIndex",
+          "GdmTable": "DriverMessageVehTypeAsgn",
+          "GdmSourceTable": "FahrerMeldung",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 1000688,
+      "GdmBaseTable": "Gdm:I_CompareBvTable",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:I_CompareBvColumn.CompareBvTableIndex",
+          "SourceAttribute": "Gdm:I_CompareBvTable.Idx",
+          "GdmAttribute": "CompareBvTableIndex",
+          "GdmTable": "I_CompareBvColumn",
+          "GdmSourceTable": "I_CompareBvTable",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100671,
+      "GdmBaseTable": "Gdm:AnnouncementCategory",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:CategoryAnnouncementAsgn.AnnouncementCategoryIndex",
+          "SourceAttribute": "Gdm:AnnouncementCategory.Idx",
+          "GdmAttribute": "AnnouncementCategoryIndex",
+          "GdmTable": "CategoryAnnouncementAsgn",
+          "GdmSourceTable": "AnnouncementCategory",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    },
+    {
+      "Id": 100099,
+      "GdmBaseTable": "Gdm:NPVZwischenpunktAttribut",
+      "UseCleanUpManager": false,
+      "RelatedTables": [
+        {
+          "Attribute": "Gdm:NetworkChangeIntermPointAsgn.IntermediatePointIndex",
+          "SourceAttribute": "Gdm:NPVZwischenpunktAttribut.Idx",
+          "GdmAttribute": "IntermediatePointIndex",
+          "GdmTable": "NetworkChangeIntermPointAsgn",
+          "GdmSourceTable": "NPVZwischenpunktAttribut",
+          "GdmSourceAttribute": "Idx",
+          "UseCleanUpManager": false,
+          "DeleteMode": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+
+.loading-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Adjust the width and height if necessary */
+}
+.k-i-loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 64px;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ff6757;
+}
+.window-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  overflow: hidden;
+  z-index: 1000; /* Adjust the z-index value as per your requirements */
+align-content: flex-start;
+  .kendowindow{
+    resize: both;
+    
+    .k-window-titlebar {
+      .k-window-title {
+        justify-content: flex-start;
+        font-size: 1.125rem;
+        font-weight: 400;  
+        
+        color: variables.$light-text-color;
+      }
+      height: 20px;
+      $searchColor: functions.matColor(variables.$trapeze-palette-primary, 800);
+      background-color: $searchColor;
+      display: flex;
+      justify-content: flex-end;      
+    }
+    
+  }
+}
+
+ 

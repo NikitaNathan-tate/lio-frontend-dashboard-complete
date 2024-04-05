@@ -1,0 +1,189 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+
+
+
+::ng-deep {
+
+  .brand-logo-wrapper {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    padding-left: 10px;
+
+    .lio-data-margin {
+      margin-top: 25px !important;
+    }
+  }
+
+  .toolbar-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-badge-content {
+    border: 2px solid white;
+    text-align: center;
+    margin-top: 14px;
+    margin-right: 14px;
+    line-height: 18px !important;
+    border-radius: 4px;
+
+  }
+
+  .mat-badge-above .mat-badge-after {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+  }
+
+  .user-menu-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .user-name {
+      size: 15px;
+      font-weight: 300;
+      /* Adjust the weight to your preference, 400 is normal */
+    }
+
+    .icon-button-margin-user {
+      margin-left: 15px;
+      margin-right: -12px;
+      /* Adjust the margin as needed */
+    }
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////
+
+
+.date-format-selector {
+  margin:0px 20px;
+  display: flex;
+  align-items: center; /* Aligns the label and the dropdown vertically */
+  gap: 10px; /* Adds some space between the label and the dropdown */
+  padding: 5px; /* Adds some padding around the container */
+  background-color:white; /* A light grey background */
+  border-radius: 0px; /* Rounded corners for the container */
+}
+
+.date-format-selector label {
+  font-size: 14px; /* Sets the font size for the label */
+  color: #333; /* Dark grey color for the text */
+  font-weight: 400; /* Makes the label text bold */
+}
+
+.date-format-selector select {
+  padding: 5px 10px; /* Adds some padding inside the dropdown */
+  font-size: 14px; /* Sets the font size for the dropdown options */
+  // border: 1px solid white; /* A light grey border for the dropdown */
+  border-radius: 5px; /* Rounded corners for the dropdown */
+  background-color: white; /* Sets the background color to white */
+  cursor: pointer; 
+  font-weight: 400;
+}
+
+/* Styles for the dropdown options */
+.date-format-selector option {
+  padding: 0px;
+  font-weight: 400;
+  font-size: 14px; 
+}
+
+::ng-deep .k-dropdown-wrap {
+  border-bottom: none !important; /* Remove the bottom border */
+}
+
+.save-all-button {
+  // margin-bottom: 2px; /* Adds space above the button */
+  padding: 10px; /* Adjust padding to your preference */
+  border: none; /* Removes the border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Changes cursor to pointer on hover */
+  align-items: center;
+  background-color: white;
+}
+
+// .save-all-button:hover {
+//   background-color: white; /* Darker shade of blue on hover */
+// }
+
+// .panelbar-wrapper {
+//   padding: 30px;
+//   color: #787878;
+//   background-color: #fcf7f8;
+//   border: 1px solid rgba(0, 0, 0, 0.05);
+// }
+
+::ng-deep .k-panelbar {
+  background-color: white;
+  color: black; /* Default text color */
+}
+
+::ng-deep .kendo-panelbar .kendo-panelbar-item-title:hover {
+  background-color: white; /* White background on hover */
+}
+
+/* Target the kendo-panelbar-item class for the selected state using Angular's ng-reflect-selected attribute */
+// ::ng-deep .kendo-panelbar  .kendo-panelbar-item-title {
+//   background-color: red; /* Grey background on selection */
+//   color: black; /* Black text color on selection */
+// }
+
+::ng-deep .k-dropdown-wrap .k-input {
+  font-size: 12px;
+}
+
+/* Optionally, adjust the height and padding for a smaller overall appearance */
+::ng-deep .k-dropdown-wrap {
+  padding: 0px; /* Reduce padding for a smaller look */
+  height: auto; /* Adjust based on your needs, 'auto' will size according to content and padding */
+}
+
+
+::ng-deep .k-popup {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  border: none;
+  border-color: black;
+}
+
+.button-container{
+  cursor: pointer;
+}
+
+.recycled-versions-container {
+  margin-top: 10px; /* This pushes the container to the bottom */
+}
+
+::ng-deep .k-panelbar{
+  background-color: white;
+  border-color: #f1f1f1;
+}
+
+::ng-deep .k-input-value-text{
+  font-size: 12px;
+  border: none;
+}
+
+::ng-deep .k-picker-md .k-input-inner {
+
+   padding: 5px;
+}
+::ng-deep .k-picker-solid{
+  border: none;
+}
+
+::ng-deep .k-panelbar > .k-panelbar-header > .k-link {
+padding-left: 5px;
+padding-right: 5px;
+padding: 10px 5px;
+}
+
+::ng-deep .k-picker-solid:focus{
+  border-color: #f1f1f1;
+}

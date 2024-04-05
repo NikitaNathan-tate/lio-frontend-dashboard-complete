@@ -1,0 +1,49 @@
+<div class="paramtoolbar">
+  <ng-container >
+    <!-- <button mat-flat-button (click)="addNewRow()"><span class="material-icons icon" >add_task</span>          
+    </button> -->
+    <!-- NAME -->
+    <div class="parameter-name"  > </div>
+
+    <kendo-dropdownlist  
+    [data]="dropdownData"
+    [textField]="'name'"
+    [valueField]="'id'"
+    [value]="selectedValue" 
+    (selectionChange)="onDropdownSelectionChange($event)"
+    class="auto-width-dropdown"
+  ></kendo-dropdownlist>
+
+  </ng-container>
+</div>
+<kendo-grid [sortable]="true" [size]="smallSize" 
+ [filter]="filter"  [filterable]="filterable"
+(filterChange)="filterChange($event)"
+[data]="view$ | async"
+[loading]="isLoading"
+[height]="550"
+[sort]="sort" 
+[reorderable]="true"
+[resizable]="true"
+[navigable]="true"
+(sortChange)="sortChange($event)" 
+(cancel)="cancelHandler($event)"
+          (save)="saveHandler($event)"
+          (remove)="removeHandler($event)"
+          (add)="addHandler($event)"
+          [navigable]="true"
+          (edit)="editHandler($event)" 
+          (cellClick)="cellClickHandler($event)"
+          (cellClose)="cellCloseHandler($event)"
+>
+<kendo-grid-column field="stopnumber" title="Stop Number" [width]="100"></kendo-grid-column>
+<kendo-grid-column 
+  field="longdescription"
+  [width]="200"
+  title="Long Description"
+></kendo-grid-column>
+<kendo-grid-column field="shortcode"  title="Short Code"> </kendo-grid-column>
+<div *kendoGridDetailTemplate="let dataItem">
+  <app-details [parenttable]="dataItem"></app-details>
+</div>
+</kendo-grid>

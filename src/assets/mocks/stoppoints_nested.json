@@ -1,0 +1,6 @@
+[
+    { "primaryKeyDuid": 1, "stopName": "ABZW", "pointNumber": 1},
+    { "primaryKeyDuid": 2, "stopName": "AD", "pointNumber": 2  },
+    { "primaryKeyDuid": 3, "stopName": "ABN", "pointNumber": 1 },
+    { "primaryKeyDuid": 4, "stopName": "ABN", "pointNumber": 2  }
+  ]

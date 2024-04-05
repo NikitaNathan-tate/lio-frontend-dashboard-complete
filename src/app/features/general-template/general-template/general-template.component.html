@@ -1,0 +1,185 @@
+
+<div class="generaltemplate-container">
+    
+  <div class="paramtoolbar"   *ngIf="isDropdownVisible">
+    <ng-container >
+      <!-- <button mat-flat-button (click)="addNewRow()"><span class="material-icons icon" >add_task</span>          
+      </button> -->
+      <!-- NAME -->
+      <div class="parameter-name" *ngIf="isDropdownVisible">{{ parameterName }}</div>
+
+      <kendo-dropdownlist *ngIf="isDropdownVisible"
+      [data]="dropdownData"
+      [textField]="'name'"
+      [valueField]="'id'"
+      [(ngModel)]="masterDropdowValue"
+      (selectionChange)="onDropdownSelectionChange($event)"
+    ></kendo-dropdownlist>
+    <div class="parameter-name" *ngIf="isSecondDropdownVisible">{{ secondParameterName }}</div>
+
+    <kendo-dropdownlist *ngIf="isSecondDropdownVisible"
+    [data]="secondDropdownData"
+    [textField]="'name'"
+    [valueField]="'id'"
+    [(ngModel)]="secondmasterDropdownValue"
+    (selectionChange)="onSecondDropdownSelectionChange($event)"
+  ></kendo-dropdownlist>
+    </ng-container>
+  </div>
+  <div class="grid-container" style="width:100vw;"  >
+  <kendo-grid  #grid  (customPaste)="onExcelPaste($event)"
+          [data]="view|async" 
+          [size]="smallSize"
+          [loading]="loading"
+          scrollable="virtual"
+          [pageSize]="gridState.take"
+          [skip]="gridState.skip" [height]="height"
+          [rowHeight]="36"
+          [detailRowHeight]="30"
+          [sortable]="sortSettings"
+          [sort]="gridState.sort"
+          (dataStateChange)="onStateChange($event)"
+          [autoSize]="false"
+          [reorderable]="true"
+          [filterable]="filterable"
+          [filter]="filter"
+          [resizable]="true"
+          [columnMenu]="menuSettings"
+          [selectable]="selectableSettings"
+          [rowSelected]="isRowSelected"
+          (selectionChange)="selectionChangeHandler($event)"
+          kendoGridSelectBy
+          [(selectedKeys)]="kendoSelection"
+          (dblclick)="onDblClick()"
+          (cellClick)="cellClickHandler($event)"
+          (cellClose)="cellCloseHandler($event)"
+          (cancel)="cancelHandler($event)"
+          (save)="saveHandler($event)"
+          (remove)="removeHandler($event)"
+          (add)="addHandler($event)"
+          [navigable]="true"
+          (columnVisibilityChange)="columnVisibilityChanged($event)"
+          (columnResize)="columnResized($event)"
+          (columnLockedChange)="columnLockedChange($event)"
+          (columnReorder)="columnReorder($event)"
+          [groupable]="groupable"
+          [group]="groups"  
+          [kendoGridExpandGroupBy]="groupKey"
+          [(expandedGroupKeys)]="expandedKeys"
+          (groupChange)="groupChange($event)"
+          [groupsInitiallyExpanded]="initiallyExpanded"
+          (detailExpand)="onExpand($event)"
+          (detailCollapse)="onCollapse($event)"
+          [inCellTab]="createNewFormGroup"
+         >
+  <!-- <ng-template kendoGridToolbarTemplate>
+    <input kendoTextBox placeholder="Search..."  />
+  </ng-template> -->
+  <ng-template style="height:1rem;" kendoGridToolbarTemplate>
+    <!-- <button class="stylebutton" style="height:1rem;"  icon="file-pdf" (click)="pdf.saveAs('table.pdf')" fillMode="flat"></button> -->
+    <kendo-button class="stylebutton" style="height:1rem;" kendoButton    fillMode="flat" (click)="reload(false)" title="Refresh"> <span class="k-icon k-font-icon k-i-refresh"></span></kendo-button>
+    <kendo-button class="stylebutton" style="height:1rem;" kendoButton  fillMode="flat" (click)="addrow(grid)" title="Add New">  <span class="k-icon k-font-icon k-i-plus"></span></kendo-button>
+    <kendo-button class="stylebutton" style="height:1rem;"  kendoButton fillMode="flat"  [disabled]="!editService.hasChanges()" title="Save" (click)="saveChanges(grid)"> <span class="k-icon k-font-icon k-i-save"></span></kendo-button>
+    <kendo-button class="stylebutton" style="height:1rem;" kendoButton fillMode="flat"  [disabled]="!editService.hasCancelChanges()" title="Undo" (click)="cancelChanges(grid)">  <span class="k-icon k-font-icon k-i-undo"></span></kendo-button>
+   </ng-template>
+
+  
+    <kendo-grid-column  [width]="50" [locked]="false" title="" [headerClass]="'headerGeneralClass'" column>
+      <ng-template kendoGridCellTemplate let-rowIndex="rowIndex" >
+        
+        <div class="context-menu-cell"  aria-disabled="true">
+          {{ rowIndex + 1 }}
+        </div>
+      </ng-template>
+    </kendo-grid-column>
+  <ng-container *ngFor="let column of columns">
+    <kendo-grid-column  [hidden]="column.hidden" [field]="column.field" [locked]="false" 
+    [title]="column.title" [width]="column.width" [filter]="column.filter" 
+    [editable]="!column.isreadonly "
+      [editor]="column.filter" [format]="userDateFormat">
+      <ng-container *ngIf="column.type === 'dropdown'">
+        <ng-template  kendoGridEditTemplate  let-dataItem="dataItem">
+          <!-- Edit mode: Show the dropdown -->
+          <kendo-dropdownlist style="height:1.5rem;" 
+            [data]="GetData(column.field)"
+            [ngModel]="GetSelectedValue(column.field,dataItem)"
+            (selectionChange)="onDropdownValueChange(dataItem, column.field,$event)"
+          ></kendo-dropdownlist>
+        </ng-template>
+      </ng-container>
+      <ng-template kendoGridCellTemplate let-dataItem  >
+        <ng-container *ngIf="column.type === 'dropdown'">          
+          <ng-container>
+            <span
+            class="whole-cell" style="height:8px;" 
+            [style.backgroundColor]="colorCode(dataItem,column.field )"
+            [style.color]="fontColor(dataItem[column.field] )" >
+            {{ dataItem[column.field] }}
+            </span>
+          </ng-container>
+        </ng-container>
+        <ng-container *ngIf="column.type === 'image'">
+          <img src="'./assets/images/brand-logo.svg'"
+                onerror=" this.src = './assets/images/brand-logo.svg' "
+                height="40" width="40" style="border-radius:30px;" alt="Patient Image"/>       
+        </ng-container>             
+        <ng-container *ngIf="column.type === 'list'">
+          <ng-container *ngIf="column.type === 'list'">
+            <span [attr.readonly]="true">{{ dataItem[column.field] }}</span>
+       <ng-container *ngIf="column.isLinkButtonVisible === true">
+        <button kendoButton [textContent]="dataItem[column.field]" (click)="OpenLinksColumn()" fillMode="clear"
+          style="font-weight:normal ; margin-top: 0;padding-top:  0;padding-bottom: 0;padding-left: 0;padding-right: 0; ">...</button>
+     </ng-container>
+     </ng-container>
+    </ng-container>    
+
+      <ng-container *ngIf="column.type !== 'dropdown' && column.type !== 'list'">
+        <span
+        class="whole-cell" style="height:8px;" 
+        [style.backgroundColor]="colorCode(dataItem,column.field )"
+        [style.color]="fontColor(dataItem[column.field] )" >
+       
+       {{ formatDate(dataItem[column.field],column.type) }}
+    </span>
+      </ng-container>
+    </ng-template>
+    </kendo-grid-column>
+  </ng-container>
+  <kendo-grid-command-column  [hidden]=true title="Play" [width]="220" [locked]="false">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <button kendoButton style="height:1rem;"  *ngIf=!isPlaying(dataItem) icon="arrow-60-right" fillMode="flat" (click)="showDetails(dataItem)" class="k-primary"></button>
+        <button style="height:1rem;" *ngIf="isPlaying(dataItem)" kendoButton icon="handler-drag" fillMode="flat" (click)="pause(dataItem)"></button>
+       </ng-template>
+  </kendo-grid-command-column>
+
+  <ng-template  *ngIf="ContainChildTable()"  kendoGridDetailTemplate let-dataItem let-rowIndex="rowIndex"
+  >
+  <app-details *ngIf="isChildTableLoaded" [parenttable]="dataItem" [pageName]="childpageName" [tableName]="childTableName" [bvNumber]="bvNumber"
+  [parentpageName]="pageName" [windowParameters] = "windowParameters" [mapdisplay]="mapdisplay"></app-details>
+</ng-template>
+<kendo-grid-pdf fileName={{pageName}} [allPages]="true" paperSize="A4" [repeatHeaders]="true" [landscape]="true">
+  <kendo-grid-pdf-margin top="2cm" left="1cm" right="1cm" bottom="2cm"></kendo-grid-pdf-margin>
+  <ng-template kendoGridPDFTemplate let-pageNum="pageNum" let-totalPages="totalPages">
+   <div class="page-template">
+      <div class="header">
+        <div style="float: right">Page {{ pageNum }} of {{ totalPages }}</div>
+      </div>
+      <div class="footer">
+        Page {{ pageNum }} of {{ totalPages }}
+      </div>
+    </div>
+  </ng-template>
+</kendo-grid-pdf>
+<kendo-grid-excel fileName={{fileName}}></kendo-grid-excel>
+</kendo-grid>
+<grid-context-menu [for]="grid"  [generalContextMenuItems]="gridContextMenuItems" [getRowNumberContextMenuItems]="gridRowHeaderContextMenuItems"
+[getColumnHeaderContextMenuItems]="getColumnHeaderContextMenuItems" [getTableHeaderContextMenuItems]="getTableHeaderContextMenuItems" (select)="onSelect($event)">
+</grid-context-menu>
+
+</div>
+</div>
+ 
+
+<ng-template #unknownValueTemplate>
+<span class="unknown-value">(unknown)</span>
+</ng-template>

@@ -1,0 +1,36 @@
+<div style="text-align: right;">
+  <button kendoButton fillMode="flat" title="View" [mat-dialog-close]="true">
+    <mat-icon class="close-icon">close</mat-icon>
+  </button>
+</div>
+
+<div [ngClass]="{'colorcode': true}" style="flex: 0 0 10%; font-size: 22px; padding: 10px;">
+  <kendo-label text="Create Base Version"></kendo-label>
+</div>
+<hr color="colorcode" />
+<div style="flex: 1; overflow: auto; padding-bottom: 30%;">
+  <div [ngClass]="{'colorcode': true}" >
+      <kendo-label text="Target Base Version" style="flex: 0 0 10%; font-size: 16px; padding: 5px;"></kendo-label>
+  <br>
+  <br>
+      <kendo-label text="BV Number : " style="flex: 0 0 10%; font-size: 13px; padding: 5px;"></kendo-label>
+      <kendo-label text="4" style="flex: 0 0 10%; font-size: 13px; padding: 1px;"></kendo-label>
+      <br>
+      
+          <kendo-label text="BV Description : " style="font-size: 14px; padding: 5px;"></kendo-label>
+          <kendo-textbox style="max-width: 50%; flex: 1;"></kendo-textbox>
+        
+        <div *ngIf="loading" class="loading-container" [style.zIndex]="1111">
+          <app-custom-spinner></app-custom-spinner>
+        
+        </div>
+      
+    </div>
+</div>
+
+<div style="display: flex; justify-content: flex-end; padding: 10px;">
+  <button kendoButton [size]="size" (click)="CreateBV()" fillMode="flat">Create base version</button>
+  <button kendoButton (click)="Close()" fillMode="flat"  >Close</button>
+</div>
+
+<app-custom-dialog [opened]="openMessageDialog" (yesClick)="onYesButtonClick()" (noClick)="onNoButtonClick()" [confirmationMessage]="message" [isConfirmationDialog]="true"></app-custom-dialog>

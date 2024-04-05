@@ -1,0 +1,18 @@
+<div #anchor class="popup-anchor"></div>
+
+<!-- Overlay -->
+<div class="overlay" (click)="close()"></div>
+
+<kendo-popup #popup [anchor]="anchor" class="center-popup">
+  <div class="popup-container" [style.height]="height" [style.width]="width">
+    <div class="heading">
+      <p>{{heading}}</p>
+      <button style="border: none; background-color: white; cursor: pointer; " fillMode="clear" (click)="close()"> <mat-icon style="vertical-align: middle; font-weight: bold; " [style]="">close</mat-icon>
+      </button>
+
+    </div>
+    <div class="popup-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</kendo-popup>

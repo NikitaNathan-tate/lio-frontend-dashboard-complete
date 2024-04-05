@@ -1,0 +1,17 @@
+<div class="zoom-panel">
+    <button mat-raised-button
+            class="zoom-control"
+            title="Zoom in"
+            [disabled]="zoomInDisabled"
+            (click)="onZoomInButtonClick()">
+      <i class="material-icons">add</i>
+    </button>
+    <button mat-raised-button
+            class="zoom-control"
+            title="Zoom out"
+            [disabled]="zoomOutDisabled"
+            (click)="onZoomOutButtonClick()">
+      <i class="material-icons">remove</i>
+    </button>
+  </div>
+  

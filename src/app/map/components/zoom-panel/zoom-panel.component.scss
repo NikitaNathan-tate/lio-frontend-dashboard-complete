@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/mixins";
+@use "/src/styles/abstracts/functions";
+
+.zoom-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  gap: 0.25rem;
+
+  .zoom-control {
+    padding: 0.3rem;
+    min-width: 0;
+    line-height: normal;
+    box-shadow: variables.$mat-elevation-z5;
+
+    .material-icons {
+      font-size: 1.5rem;
+      color: variables.$dark-text-color;
+    }
+  }
+}

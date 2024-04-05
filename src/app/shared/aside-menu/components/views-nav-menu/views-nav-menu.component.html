@@ -1,0 +1,21 @@
+<!-- cdkFocus on card to avoid auto-focusing buttons on init -->
+<div class="menu" cdkFocusRegionstart>
+ 
+    <div class="telerikmenu" cdkFocusRegionstart>
+      
+        <kendo-menu [items]="items" [vertical]="true" (select)="onSelect($event)">
+          <ng-template kendoMenuItemTemplate let-item="item" >
+            <div class="telerikmenuitems">
+            <span class="material-icons icon">{{item.Icon}}</span>
+            {{ item.Title }}
+            </div>
+          </ng-template>
+        </kendo-menu>
+    </div>
+    <!-- COPYRIGHT -->
+    <div class="copyright">
+      <span>© 1999 - {{ currentYear }} Trapeze Software ULC.</span>
+      <span>UI v{{ uiVersion }}</span>
+    </div>
+  </div>
+  

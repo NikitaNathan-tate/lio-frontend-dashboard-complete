@@ -1,0 +1,211 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/mixins";
+
+
+.disable-context-menu {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+.disabled {
+  color: gray; /* You can customize the styling as needed */
+  pointer-events: none; /* Prevent interaction with the element */
+}
+
+.k-grid .no-padding {
+  padding: 0;
+}
+.k-grid .k-filter-row {
+  height: 1px;
+  padding-left: 0%;
+  padding-right: 0%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+
+}
+.headerGeneralClass {
+  padding: 0px !important;
+}
+ .whole-cell {
+   display: block;
+   padding: 8px 12px; /* depends on theme */
+ }
+ .k-grid-table td {
+  font-size: 10px;
+  padding: 0px 0px;
+  white-space: nowrap;
+}
+.dirty:before {
+  content: '\\e003';
+  font-family: WebComponentsIcons;
+  font-size: 24px;
+  position: absolute;
+  top: -12px;
+  left: -8px;
+  color: red;
+}
+.k-grid-virtual .k-grid-content {
+  > table {
+      position: absolute;
+      z-index: 1;
+  }
+
+  > .k-height-container {
+      position: relative;
+  }
+}
+.toolbar-container {
+  color: green;
+  display: flex;
+  gap: 5px; /* Adjust the gap to control the spacing between buttons */
+  padding: 0; /* Remove the default padding around the toolbar container */
+  margin: 0; /* Remove the default margin around the toolbar container */
+}
+.stylebutton {
+  height:20%;
+  text-transform: none;
+  padding: 1px 2px;
+  font: size 10px;
+  font-weight: normal;
+}
+.disabled-item {
+  color: #888; /* Change the color to a muted/desaturated color to represent disabled state */
+  pointer-events: none; /* Disable pointer events so that the item cannot be clicked */
+  cursor: not-allowed; /* Show the "not-allowed" cursor when hovering over disabled items */
+}
+.my-grid .k-grid-header {
+  padding: 0px !important;
+  height: 111%;
+}
+.generaltemplate-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  //padding: 0.5rem 2rem;
+  .toolbar {
+    width: 100%;
+    height: variables.$toolbar-height;
+    padding: 0.5rem 2rem;
+    @include mixins.card();
+  
+    .page-name {
+      font-weight: 600;
+    }
+}
+.paramtoolbar {
+  margin: 1rem 1rem;
+  $marginX: 1rem;
+  width: calc(100% - $marginX * 2);
+  height: 40px;
+  padding: 0.5rem 2rem;
+  @include mixins.card();
+  .icon {
+    font-size: 24px;
+  }
+  .parameter-name {
+    align-self: center;
+    padding: 0.5rem;
+  }
+  kendo-dropdownlist {
+    width: 200px;
+    margin: 0rem 1rem;
+    height:30px;
+  }
+}
+  .unknown-value {
+    color: functions.matColor(mat.$grey-palette, 400);
+  }
+
+  .app-loading-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 999;
+    background: transparent;
+  }
+  .k-grid-table tr {
+    line-height: 100%;
+  }
+
+  .k-grid td.k-selected,
+  .k-grid .k-table-row.k-selected > td,
+  .k-grid .k-table-td.k-selected,
+  .k-grid .k-table-row.k-selected > .k-table-td {
+   background-color: darkgrey;
+    color: blue($color: #000000);
+}
+  kendo-grid {
+    $marginX: 1rem;
+    $marginY: 1rem;
+    $borderColor: variables.$light-bg-color;
+    $toolbar-height: variables.$toolbar-height;
+    margin: $marginY $marginX;
+    width: calc(100% - $marginX * 2); 
+
+    ::ng-deep .k-filter-row td, ::ng-deep .k-filter-row th {
+      padding: 0.1rem;
+    }
+
+    ::ng-deep td, ::ng-deep th, ::ng-deep .k-grid-header thead > tr:not(:only-child) > th {
+      border-color: $borderColor !important;
+    }
+
+    ::ng-deep .k-grid-header thead  {
+      border-color: $borderColor !important;
+      background-color: functions.matColor(mat.$grey-palette, 300);
+    }
+
+    ::ng-deep td {
+      padding: 0.5rem 1rem;
+    }
+
+    ::ng-deep tbody tr:hover {
+      background: functions.matColor(variables.$trapeze-palette-primary, 50);
+    }
+
+    ::ng-deep .k-grid-content tr:not(.k-grouping-row) td:not(.k-group-cell) {
+      cursor: pointer;
+    }
+
+    .filter {
+      display: flex;
+      align-items: center;
+      width: 80%;
+      height: 50%;
+      gap: 1px;
+
+      kendo-formfield {
+        flex: 1;
+      }
+    }
+
+    
+    .status-chip {
+      background-color: functions.matColor(mat.$red-palette, 500);
+      padding: 0.3rem;
+      border-radius: 50%;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      transition: 150ms background-color ease-out;
+
+      &.active {
+        background-color: functions.matColor(mat.$green-palette, 500);
+      }
+
+      .material-icons {
+        cursor: default;
+        font-size: 1rem;
+        color: variables.$light-text-color;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,502 @@
+[
+  {
+     "begin":"15/55/2024 00:55:23",
+     "endtime":"15/57/2024 00:57:45",
+     "username":"lioadmin",
+     "computername":"",
+     "bvno":1,
+     "bvdesc":"LTA Live",
+     "activity":"SmartClient opened",
+     "status":"successful"
+  },
+  {
+     "begin":"15/36/2024 00:36:14",
+     "endtime":"15/55/2024 00:55:21",
+     "username":"lioadmin",
+     "computername":"",
+     "bvno":1,
+     "bvdesc":"LTA Live",
+     "activity":"SmartClient opened",
+     "status":"succesful"
+  },
+  {
+     "begin":"14/42/2024 23:42:03",
+     "endtime":"15/36/2024 00:36:11",
+     "username":"lioadmin",
+     "computername":"",
+     "bvno":1,
+     "bvdesc":"LTA Live",
+     "activity":"SmartClient opened",
+     "status":"successful"
+  },
+  {
+     "begin":"14/36/2024 23:36:00",
+     "endtime":"14/42/2024 23:42:03",
+     "username":"lioadmin",
+     "computername":"",
+     "bvno":1,
+     "bvdesc":"LTA Live",
+     "activity":"SmartClient opened",
+     "status":"successful"
+  },
+  {
+     "begin":"06/25/2023 03:25:49",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"SmartClient opened",
+     "status":"error"
+  },
+  {
+     "begin":"06/25/2023 03:25:39",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Close Baseversion",
+     "status":""
+  },
+  {
+     "begin":"06/25/2023 03:25:24",
+     "endtime":"06/25/2023 03:25:26",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"06/25/2023 03:25:18",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":""
+  },
+  {
+     "begin":"06/25/2023 03:25:06",
+     "endtime":"06/25/2023 03:25:12",
+     "username":"lta_siewjy",
+     "computername":"",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"SmartClient opened",
+     "status":"cancelledl"
+  },
+  {
+     "begin":"06/24/2023 03:24:52",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":0,
+     "status":""
+  },
+  {
+     "begin":"05/43/2023 10:43:24",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":"SmartClient opened",
+     "status":""
+  },
+  {
+     "begin":"05/02/2023 10:02:54",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Close Baseversion",
+     "status":""
+  },
+  {
+     "begin":"05/02/2023 10:02:20",
+     "endtime":"05/02/2023 10:02:20",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Data Updated",
+     "status":""
+  },
+  {
+     "begin":"05/02/2023 10:02:05",
+     "endtime":"05/02/2023 10:02:06",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Data Updated",
+     "status":""
+  },
+  {
+     "begin":"05/01/2023 10:01:21",
+     "endtime":"05/01/2023 10:01:21",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/01/2023 10:01:05",
+     "endtime":"05/01/2023 10:01:05",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Data Updated",
+     "status":""
+  },
+  {
+     "begin":"05/00/2023 10:00:23",
+     "endtime":"05/00/2023 10:00:24",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Data Updated",
+     "status":""
+  },
+  {
+     "begin":"05/00/2023 10:00:08",
+     "endtime":"05/00/2023 10:00:08",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/59/2023 09:59:05",
+     "endtime":"05/59/2023 09:59:06",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Data Updated",
+     "status":""
+  },
+  {
+     "begin":"05/57/2023 09:57:54",
+     "endtime":"05/57/2023 09:57:54",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/57/2023 09:57:40",
+     "endtime":"05/57/2023 09:57:42",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/57/2023 09:57:11",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":""
+  },
+  {
+     "begin":"05/57/2023 08:57:48",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Close Baseversion",
+     "status":""
+  },
+  {
+     "begin":"05/56/2023 08:56:40",
+     "endtime":"05/56/2023 08:56:40",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/55/2023 08:55:36",
+     "endtime":"05/55/2023 08:55:38",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/55/2023 08:55:31",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":""
+  },
+  {
+     "begin":"05/36/2023 08:36:51",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Close Baseversion",
+     "status":""
+  },
+  {
+     "begin":"05/32/2023 08:32:51",
+     "endtime":"05/33/2023 08:33:04",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/32/2023 08:32:34",
+     "endtime":"05/32/2023 08:32:36",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/32/2023 08:32:20",
+     "endtime":"05/32/2023 08:32:28",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/32/2023 08:32:12",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":""
+  },
+  {
+     "begin":"05/15/2023 08:15:38",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Close Baseversion",
+     "status":""
+  },
+  {
+     "begin":"05/14/2023 08:14:53",
+     "endtime":"05/14/2023 08:14:54",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/14/2023 08:14:43",
+     "endtime":"05/14/2023 08:14:45",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/14/2023 08:14:38",
+     "endtime":"",
+     "username":"lta_siewjy",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":""
+  },
+  {
+     "begin":"05/26/2023 07:26:39",
+     "endtime":"",
+     "username":"lta_chengcp",
+     "computername":"IBXVWPMT02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":"SmartClient opened",
+     "status":""
+  },
+  {
+     "begin":"05/26/2023 07:26:28",
+     "endtime":"",
+     "username":"lta_chengcp",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Close Baseversion",
+     "status":""
+  },
+  {
+     "begin":"05/25/2023 07:25:55",
+     "endtime":"05/25/2023 07:25:56",
+     "username":"LTA_CHENGCP",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/25/2023 07:25:48",
+     "endtime":"05/25/2023 07:25:49",
+     "username":"LTA_CHENGCP",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/25/2023 07:25:21",
+     "endtime":"05/25/2023 07:25:28",
+     "username":"LTA_CHENGCP",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/24/2023 07:24:16",
+     "endtime":"05/24/2023 07:24:58",
+     "username":"lta_chengcp",
+     "computername":"",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":"successful"
+  },
+  {
+     "begin":"05/21/2023 07:21:25",
+     "endtime":"05/21/2023 07:21:27",
+     "username":"LTA_CHENGCP",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/21/2023 07:21:04",
+     "endtime":"05/21/2023 07:21:07",
+     "username":"LTA_CHENGCP",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Table Opened",
+     "status":""
+  },
+  {
+     "begin":"05/20/2023 07:20:53",
+     "endtime":"",
+     "username":"lta_chengcp",
+     "computername":"IBXVWPMT02",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Open in edit mode",
+     "status":""
+  },
+  {
+     "begin":"05/20/2023 07:20:18",
+     "endtime":"",
+     "username":"lta_chengcp",
+     "computername":"IBXVWPMT02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":0,
+     "status":""
+  },
+  {
+     "begin":"05/34/2023 06:34:53",
+     "endtime":"",
+     "username":"lioserver",
+     "computername":"IBXVWPAP02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":"Admin closed",
+     "status":""
+  },
+  {
+     "begin":"05/34/2023 06:34:51",
+     "endtime":"",
+     "username":"lioserver",
+     "computername":"IBXVWPAP02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":"SmartClient opened",
+     "status":""
+  },
+  {
+     "begin":"05/34/2023 06:34:49",
+     "endtime":"",
+     "username":"lioserver",
+     "computername":"IBXVWPAP02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":"Admin opened",
+     "status":""
+  },
+  {
+     "begin":"05/34/2023 06:34:44",
+     "endtime":"",
+     "username":"lioserver",
+     "computername":"IBXVWPAP02",
+     "bvno":"",
+     "bvdesc":"",
+     "activity":"Admin closed",
+     "status":""
+  },
+  {
+     "begin":"05/34/2023 06:34:41",
+     "endtime":"05/34/2023 06:34:41",
+     "username":"LioServer",
+     "computername":"IBXVWPWB01",
+     "bvno":4,
+     "bvdesc":"LTA Live",
+     "activity":"Data reloaded",
+     "status":""
+  }
+]

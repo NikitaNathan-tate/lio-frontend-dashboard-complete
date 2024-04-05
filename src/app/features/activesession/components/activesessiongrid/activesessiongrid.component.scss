@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/mixins";
+
+ 
+  .colorcode {
+    color:functions.matColor(variables.$trapeze-palette-primary, 700);
+
+}
+::ng-deep .notification-dialog{
+  mat-dialog-container {
+   padding: 0.5rem;
+ }
+
+ ::ng-deep .k-button {
+  text-transform: none !important;
+}
+
+}

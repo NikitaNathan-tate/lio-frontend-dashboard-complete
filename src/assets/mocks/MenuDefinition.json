@@ -1,0 +1,96 @@
+{
+  "GuiMenuItem": [
+    {
+      "items": [
+        {
+          "items": [],
+          "Title": "Stops",
+          "Route": "stops",
+          "CssClass": ""
+        },
+        {
+          "items": [],
+          "Title": "Links",
+          "Route": "links",
+          "CssClass": ""
+        }
+      ],
+      "Title": "Network Data",
+      "Icon": "hail"
+    },
+    {
+      "items": [
+        {
+          "items": [],
+          "Title": "Routes",
+          "Route": "linie",
+          "CssClass": ""
+        },
+        {
+          "items": [],
+          "Title": "Patterns",
+          "Route": "patterns",
+          "CssClass": ""
+        },
+        {
+          "items": [],
+          "Title": "Day Type Group",
+          "Route": "daytypegroup",
+          "CssClass": ""
+        },
+        {
+          "items": [],
+          "Title": "Operational Day Types",
+          "Route": "operationaldaytype",
+          "CssClass": ""
+        }
+      ],
+      "Title": "Route Data",
+      "Icon": "route"
+    },
+    {
+      "items": [
+        {
+          "items": [],
+          "Title": "Calendar",
+          "Route": "calendar",
+          "CssClass": ""
+        },
+        {
+          "items": [],
+          "Title": "Trips per Day Type",
+          "Route": "trip",
+          "CssClass": ""
+        }
+      ],
+      "Title": "Timetable",
+      "Icon": "departure_board"
+    },
+    {
+      "items": [],
+      "Title": "Control Centre",
+      "Icon": "computer"
+    },
+    {
+      "items": [],
+      "Title": "Vehicle",
+      "Icon": "directions_bus"
+    },
+    {
+      "items": [],
+      "Title": "Data Check",
+      "Icon": "checklist"
+    },
+    {
+      "items": [],
+      "Title": "Settings",
+      "Icon": "tune"
+    },
+    {
+      "items": [],
+      "Title": "Geo Editor",
+      "Icon": "public",
+      "Route": "geoeditor"
+    }
+  ]
+}

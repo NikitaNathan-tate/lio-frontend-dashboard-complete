@@ -1,0 +1,53 @@
+ [
+  {
+    "field": "primarykeyduid",
+    "title": "ID",
+    "width": 50,
+    "type": "number",
+    "filterType": "numeric",
+    "hidden": false,
+    "locked":false ,
+    "orderIndex": 0
+  },
+    {
+      "field": "stopnumber",
+      "title": "Number",
+      "width": 100,
+      "type": "number",
+      "filter": "numeric",
+      "hidden": false,
+      "locked":false,
+      "orderIndex": 1
+    },
+    {
+      "field": "shortcode",
+      "title": "Abbr.",
+      "width": 100,
+      "type": "string",
+      "filter": "text",
+      "hidden": false,
+      "locked":false,
+      "orderIndex": 2
+    },
+    {
+      "field": "longdescription",
+      "title": "Name",
+      "width": 200,
+      "type": "string",
+      "filter": "text",
+      "hidden": false,
+      "locked":false ,
+      "orderIndex": 3
+
+    },
+    {
+      "field": "tlpmode",
+      "title": "TLP",
+      "width": 200,
+      "type": "dropdown",
+      "filter": "text",
+      "hidden": false,
+      "locked":false ,
+      "orderIndex": 4
+    }
+  ]

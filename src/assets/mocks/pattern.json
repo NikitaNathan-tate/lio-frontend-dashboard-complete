@@ -1,0 +1,48 @@
+[
+    {
+        "direction": 2,
+        "primaryKeyduid": "60833212410763746",
+        "isBasicPath": 0,
+        "longNameDefault": "486",
+        "patternNumber": 1,
+        "patternType": 1,
+        "routeRefDuid":"60835712076873802",
+        "shortName": "1400(9),14009->1400(19),14009",
+        "links":
+        [
+            {
+            "primaryKeyduid":"71721401177895570",
+            "points":[{"lat":51.0198666,"lon": 11.023444},
+                      {"lat":51.0298666,"lon": 11.033444}],
+            "segments":[
+                    {
+                        "pointA":{"lat":51.0198666,"lon": 11.0234444},
+                        "pointB":{"lat":51.0201638,"lon": 11.0243000}
+                    }
+                ]
+            },
+            {
+                "primaryKeyduid":"71721401177907057",
+                "points":[{"lat":51.0201638,"lon": 11.0243000},
+                          {"lat":51.0199388,"lon": 11.0232444}],
+                "segments":[
+                        {
+                            "pointA":{"lat":51.0199388,"lon": 11.0243000},
+                            "pointB":{"lat":51.0199388,"lon": 11.0232444}
+                        }
+                    ]
+            },
+            {
+                    "primaryKeyduid":"71721401177907059",
+                    "points":[{"lat":51.019938,"lon": 11.023244},
+                            {"lat":51.0201500,"lon": 11.0233222}],
+                    "segments":[
+                            {
+                                "pointA":{"lat":51.019938,"lon": 11.0232446},
+                                "pointB":{"lat":51.020151,"lon": 11.0233222}
+                            }
+                        ]
+            }
+        ]
+    }
+]

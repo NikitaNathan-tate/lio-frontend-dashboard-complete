@@ -1,0 +1,42 @@
+[
+    {
+       "primarykeyduid":1,
+       "nummer":1,
+       "description":"LTA Live 2024",
+       "name":"preethi.dwarkanath",
+       "activity":"Editing",
+       "activitystarttime":"2024-03-07T09:39:16",
+       "nosessions":1,
+       "sessionindex":1
+    },
+    {
+       "primarykeyduid":1,
+       "nummer":1,
+       "description":"LTA Live 2024",
+       "name":"preethi.dwarkanath",
+       "activity":"Data Check",
+       "activitystarttime":"2024-03-07T09:45:16",
+       "nosessions":1,
+       "sessionindex":1
+    },
+    {
+       "primarykeyduid":6,
+       "nummer":3,
+       "description":"VDV Import Test - Routes only of BV 1",
+       "name":"preethi.dwarkanath",
+       "activity":"Editing",
+       "activitystarttime":"2024-03-07T09:41:05",
+       "nosessions":1,
+       "sessionindex":2
+    },
+    {
+       "primarykeyduid":6,
+       "nummer":20,
+       "description":"GTFS Import",
+       "name":"preethi.dwarkanath",
+       "activity":"GTFS Import",
+       "activitystarttime":"2024-03-30T09:41:05",
+       "nosessions":1,
+       "sessionindex":2
+    }
+ ]

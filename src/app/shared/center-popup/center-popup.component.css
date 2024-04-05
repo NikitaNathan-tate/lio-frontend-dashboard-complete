@@ -1,0 +1,90 @@
+.popup-anchor {
+    position: fixed;
+    top: 25%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+    }
+
+.popup-container {
+    border: 1px solid;
+    border-color: white;
+    background-color: white;
+    padding: 20px;
+     display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 4px;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1000; /* Ensure it's above other content but below the popup */
+  }
+  
+  /* Center Popup styles */
+  .center-popup {
+    z-index: 1001; /* Above the overlay */
+    /* Other styles to center the popup */
+  }
+  
+  
+
+  .input-group {
+    display: flex; /* Use flexbox to align items in a row */
+  }
+  
+  .input-label {
+    min-width: 150px; /* Adjust based on your maximum content width */
+    margin-right: 20px; /* Extra padding to the right of the label */
+    text-align: right; /* Align the text to the right of the label */
+  }
+
+  ::ng-deep .k-popup{
+    /* border-radius: 20px; */
+  }
+
+  .heading {
+    display: flex; /* This turns .heading into a flex container */
+    align-items: center; /* This vertically centers the flex items */
+    justify-content: space-between; /* This places the child elements on opposite ends */
+    line-height: 1px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    height: 20px;
+  }
+
+.heading p {
+  /* margin: 5px; */
+  font-size: 18px;
+  font-weight: 410;
+  color: #85243f;
+}
+
+::ng-deep .mat-icon {
+  -webkit-user-select: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  display: inline-block;
+  fill: currentColor;
+  height: 24px;
+  width: 24px;
+  overflow: hidden;
+}
+
+.popup-content{
+  flex-grow: 1; 
+  overflow: auto;  
+
+}
+
+::ng-deep .k-input-solid:hover{
+  border-color: none;
+}
+
+

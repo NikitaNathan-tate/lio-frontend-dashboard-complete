@@ -1,0 +1,27 @@
+<div class="app-container">
+  <!-- header -->
+  <div class="app-header">
+    <navbar (hamburgerMenuToggle)="toggleViewsMenuDrawer(viewsMenuDrawer)"
+      [hamburgerMenuOpened]="viewsMenuDrawer.opened">
+    </navbar>
+  </div>
+
+  <!-- router-outlet -->
+  <div class="app-content">
+    <mat-drawer-container  class="outlet-container">
+      <!-- ASIDE MENU -->
+      <mat-drawer mode="over" class="views-menu" position="start" #viewsMenuDrawer>
+        <app-views-nav-menu (closeDrawer)="viewsMenuDrawer.close()"></app-views-nav-menu>
+      </mat-drawer>
+      <!-- ROUTER OUTLET -->
+      <mat-drawer-content style="margin-top: 5px;">
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
+
+  <!-- Footer -->
+  <div class="app-footer">
+    LIO-Data {{ version }} ( {{ revision }} ) © 1999 - {{ year }} Trapeze Software ULC. All rights reserved.
+  </div>
+</div>

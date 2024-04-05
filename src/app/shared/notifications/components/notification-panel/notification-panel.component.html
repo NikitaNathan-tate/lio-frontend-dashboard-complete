@@ -1,0 +1,32 @@
+<div class="sheet">
+
+    <!-- HEADER -->
+    <div class="header">
+      <span class="icon material-icons">notifications</span>
+      <div class="text-container">
+        <span class="text">Notifications</span>
+      </div>
+    </div>
+  
+  
+    <!-- NOTIFICATIONS -->
+    <div class="content">
+  
+      <ng-container *ngIf="items;else noNotificationsTemplate">
+        <ng-container *ngIf="items.length >0; else noNotificationsTemplate">
+          <div class="notification"
+               *ngFor="let item of items" >
+             <app-notification [notification]="item"></app-notification>
+            <mat-divider></mat-divider>
+          </div>
+        </ng-container>
+      </ng-container> 
+  
+      <!-- NO NOTIFICATIONS -->
+      <ng-template #noNotificationsTemplate>
+        <div class="no-notifications"> (No notifications)</div>
+      </ng-template>
+  
+    </div> 
+  </div>
+   

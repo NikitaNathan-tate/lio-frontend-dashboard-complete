@@ -1,0 +1,67 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/functions";
+
+$breakpoints: (
+  xs-small: 360px,
+  xs-medium: 400px,
+  xs-large: 480px,
+  sm-xsmall: 600px,
+  sm-small: 720px,
+  sm-medium: 840px,
+  sm-large: 960px,
+  md-small: 1024px,
+  md-large: 1280px,
+  lg-small: 1400px,
+  lg-medium: 1500px,
+  lg-large: 1600px,
+  lg-xlarge: 1800px,
+  lg-xxlarge: 1900px,
+  lg-xxxlarge: 2000px,
+  xlg-small: 2560px,
+  xlg-medium: 3440px,
+  xlg-large: 3840px,
+);
+
+$dark-text-color: functions.matColor(mat.$grey-palette, 800);
+$light-text-color: functions.matColor(mat.$grey-palette, 50);
+$mat-elevation-z5: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+// Modified mat-pink palette
+$trapeze-palette-primary: (
+  50: #fce4ec,
+  100: #f8bbd0,
+  200: #f48fb1,
+  300: #f06292,
+  400: #ec407a,
+  500: #e91e63,
+  600: #d81b60,
+  700: #9D0020,
+  800: #85243f,
+  900: #932748,
+  A100: #ff80ab,
+  A200: #ff4081,
+  A400: #f50057,
+  A700: #c51162,
+  contrast: (
+    50: $dark-text-color,
+    100: $dark-text-color,
+    200: $dark-text-color,
+    300: $dark-text-color,
+    400: $dark-text-color,
+    500: $light-text-color,
+    600: $light-text-color,
+    700: $light-text-color,
+    800: $light-text-color,
+    900: $light-text-color,
+    A100: $dark-text-color,
+    A200: $light-text-color,
+    A400: $light-text-color,
+    A700: $light-text-color,
+  )
+);
+
+$toolbar-height: 60px;
+$primary-color: functions.matColor($trapeze-palette-primary, 800);
+$secondary-color: functions.matColor(mat.$brown-palette, 500);
+$error-color: functions.matColor(mat.$red-palette, 600);
+$light-bg-color: functions.matColor(mat.$brown-palette, 50);
+$button-hover-color: functions.matColor($trapeze-palette-primary, 50);

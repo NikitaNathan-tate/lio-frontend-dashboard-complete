@@ -1,0 +1,97 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button *ngIf="isMenuVisible" (click)="hamburgerMenuToggle.emit()">
+    <mat-icon>{{ hamburgerMenuOpened ? 'menu_open' : 'menu'}}</mat-icon>
+  </button>
+
+  <!-- Company Name -->
+  <div class="brand-logo-wrapper" (click)="navigateDahboard()">
+    <img src="assets/images/brand-logo.svg" alt="trapeze-logo">
+    <p class="lio-data-margin">LIO-Data</p>
+  </div>
+
+  <!-- Spacer to push icons to the right -->
+  <span class="toolbar-spacer"></span>
+
+  <!-- Notification Icon -->
+  <div #notificationTrigger="matMenuTrigger" [matMenuTriggerFor]="notificationMenu"
+    (mouseenter)="openNotificationMenu()" (mouseleave)="closeNotificationMenu()" class="notification-menu-trigger">
+    <button mat-icon-button [matBadge]="2" matBadgePosition="above after" matBadgeOverlap="true">
+      <mat-icon>notifications</mat-icon>
+    </button>
+  </div>
+
+  <mat-menu #notificationMenu="matMenu" [hasBackdrop]="false" (mouseleave)="closeNotificationMenu()">
+    <button mat-menu-item>
+      <p>Notification 1: Your first update is here!</p>
+    </button>
+    <button mat-menu-item>
+      <p>Notification 2: Check out the latest news!</p>
+    </button>
+  </mat-menu>
+
+  <div #userProfileTrigger class="user-menu-trigger kendo-popup-anchor" style="margin-left: 20px;" (click)="onToggle()">
+    <button mat-icon-button fillMode="clear"><mat-icon>person</mat-icon></button>
+    <span class="user-name">Nikita Yadav</span>
+  </div>
+
+  <kendo-popup *ngIf="show" [animate]="false" [anchor]="userProfileTrigger"
+    [anchorAlign]="{ horizontal: 'left', vertical: 'bottom' }" [popupAlign]=" { horizontal: 'left', vertical: 'top' }"
+    style="border-radius: 5px;" class="kendo-popup" [popupClass]="'custom-popup-shadow'" class="custom-popup-shadow">
+    <div class="panelbar-wrapper" style="margin: 5px; background-color: black;">
+      <kendo-panelbar style="width: 300px; color: grey; background-color: #f1f1f1; padding:0px">
+        <kendo-panelbar-item title="" [expanded]="true" style="color: black;">
+          <ng-template kendoPanelBarItemTitle>
+            <mat-icon style="vertical-align: middle;">settings</mat-icon>
+            Settings
+          </ng-template>
+
+          <ng-template kendoPanelBarContent>
+            <form [formGroup]="settingsForm" (ngSubmit)="onSubmit()">
+              <div>
+                <div class="date-format-selector">
+                  <label for="dateFormatDropdown">Date Format&nbsp; </label>
+                  <kendo-dropdownlist [data]="dateFormats" formControlName="DATEFORMAT">
+                  </kendo-dropdownlist>
+                </div>
+                <div class="date-format-selector">
+                  <label for="timeFormatDropdown">Time Format </label>
+                  <kendo-dropdownlist [data]="timeFormats" formControlName="TIMEFORMAT"> </kendo-dropdownlist>
+                </div>
+                <div class="date-format-selector">
+                  <label for="fontSizeDropdown">Font Size &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <kendo-dropdownlist [data]="fontSizes" formControlName="FONTSIZEINDEX"> </kendo-dropdownlist>
+                </div>
+
+                <div class="date-format-selector">
+                  <label for="defaultMapDropdown">Default Map&nbsp;</label>
+
+                  <kendo-dropdownlist [data]="defaultMaps" formControlName="DEFAULTMAPINDEX">
+                  </kendo-dropdownlist>
+                </div>
+              </div>
+              <div style="display: flex; justify-content: flex-end;">
+                <!-- <button kendoButton class="save-all-button" [title]="'Reset to Default'"> <mat-icon
+                  style="vertical-align: middle;">restore</mat-icon></button> -->
+                <button kendoButton class="save-all-button" [title]="'Save All Changes'"> <mat-icon
+                    style="vertical-align: middle;">save-all-button</mat-icon></button>
+
+              </div>
+            </form>
+          </ng-template>
+        </kendo-panelbar-item>
+        <kendo-panelbar-item title="">
+          <ng-template kendoPanelBarItemTitle>
+            <mat-icon style="vertical-align: middle;">logout</mat-icon>
+            Logout
+          </ng-template>
+        </kendo-panelbar-item>
+
+
+      </kendo-panelbar>
+    </div>
+
+
+  </kendo-popup>
+
+
+</mat-toolbar>

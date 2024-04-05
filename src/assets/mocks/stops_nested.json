@@ -1,0 +1,5 @@
+[
+    { "primaryKeyDuid": 1, "stopNumber": 1299, "shortCode": "ABZW", "longDescription": "Abzweig B4" },
+    { "primaryKeyDuid": 2, "stopNumber": 1, "shortCode": "AD", "longDescription": "BH Magdeburger Allee"  },
+    { "primaryKeyDuid": 3, "stopNumber": 837, "shortCode": "ABN", "longDescription": "Büropark AIRFURT"  } 
+   ]

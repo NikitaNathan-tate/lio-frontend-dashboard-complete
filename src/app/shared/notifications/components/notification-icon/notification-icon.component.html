@@ -1,0 +1,7 @@
+<button mat-icon-button
+        [matBadge]="notificationsQty || null"
+        [disabled]="!notificationsQty"
+        (click)="onNotificationsIconClick(notificationsQty)"
+        matBadgeColor="warn">
+  <span class="material-icons">notifications</span>
+</button>

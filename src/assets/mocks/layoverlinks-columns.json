@@ -1,0 +1,41 @@
+   [{
+    "field": "primaryKeyDuid",
+    "title": "ID",
+    "width": 50,
+    "type": "number",
+    "filterType": "numeric",
+    "filterable": "false"
+  },
+    {
+      "field": "from",
+      "title": "From",
+      "width": 100,
+      "type": "string",
+      "filterType": "text",
+      "filterable": "true"
+    },
+    {
+      "field": "to",
+      "title": "To",
+      "width": 100,
+      "type": "string",
+      "filterType": "text",
+      "filterable": "true"
+    },
+    {
+      "field": "operatingBranch",
+      "title": "Opr. Branch",
+      "width": 200,
+      "type": "string",
+      "filterType": "text",
+      "filterable": "true"
+    },
+    {
+      "field": "distance",
+      "title": "Distance",
+      "width": 100,
+      "type": "number",
+      "filterType": "numeric",
+      "filterable": "true"
+    }
+  ]

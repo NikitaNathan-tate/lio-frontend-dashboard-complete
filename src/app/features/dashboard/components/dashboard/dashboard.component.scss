@@ -1,0 +1,302 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/mixins";
+
+
+// common css ----------------------------------------------------------------
+.dashboard-outlet-container {
+  height: calc(100vh - 65px - 5px - 35px);
+  margin: 0 5px;
+  width: calc(100% - 10px);
+  overflow: auto;
+}
+
+.dashboard-container {
+  height: 100%;
+  width: 100%;
+
+}
+
+
+.white-bordered-splitter {
+  border: solid white;
+
+}
+
+::ng-deep .k-splitbar {
+  background-color: white;
+  transition: background-color 0.3s;
+  margin: 3px;
+}
+
+::ng-deep .k-splitter .k-splitbar:hover {
+  background-color: white;
+}
+
+.k-pane {
+  // border: solid black;//show this to the fabiannnnnnnnnnn for issue 
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  /* Adjust the radius as needed */
+}
+
+.custom-pane {
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.custom-pane:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+// custom editable-base css---------------------------------------------------
+.custom-pane-editable-base {
+  margin-left: 5px;
+  margin-top: 5px;
+
+}
+
+// custom editable-base css---------------------------------------------------
+.custom-pane-released-base {
+  margin-right: 5px;
+  margin-top: 5px;
+
+}
+
+// custom editable-base css---------------------------------------------------
+.custom-pane-active-session {
+  // margin: 5px, 5px, 0, 5px ;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+// custom editable-base css---------------------------------------------------
+.custom-pane-user-activity {
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+// custom editable-base css---------------------------------------------------
+.custom-pane-extra-pane {
+  margin-top: 5px;
+  margin-right: 5px;
+
+}
+
+.custom-kendo-splitter-pane-container {
+  margin-left: 5px;
+  margin-right: 5px;
+
+  .fixed-header {
+    .heading {
+      margin: 5px;
+      font-size: 15px;
+      font-weight: 410;
+      color: #555955;
+    }
+  }
+}
+
+.editable-versions-mat-table {
+  width: 100%;
+}
+
+.custom-kendo-splitter-pane-container {
+  display: flex;
+  /* Enable Flexbox */
+  flex-direction: column;
+  /* Stack children vertically */
+  height: 100%;
+  /* Take full height of its parent */
+}
+
+.fixed-header {
+  flex: 0 0 auto;
+  /* Do not grow, can shrink, based on content */
+}
+
+.custom-kendo-splitter-pane-container-body {
+  flex: 1 1 auto;
+  /* Grow to fill the space, can shrink, based on content */
+  overflow: hidden;
+  /* Hide any overflow content */
+}
+
+
+
+// GRIDS CSS IN PANE================================================
+
+::ng-deep .k-grid-md td {
+  // padding: 5px !important;
+  // margin-right: 5px;
+}
+
+::ng-deep .k-grid td,
+.k-grid .k-table-td {
+  vertical-align: baseline;
+}
+
+.feature-button {
+  cursor: pointer;
+  padding: 5px 15px;
+  /* Adjust padding as needed */
+  background-color: #9D0020;
+  ;
+  /* Example background color */
+  color: white;
+  /* Text color */
+  border: none;
+  border-radius: 4px;
+  /* Optional rounded corners */
+}
+
+.feature-button:disabled {
+  background-color: #cccccc;
+  /* Subdued background color for disabled state */
+  color: #666666;
+  /* Dimmed text color for disabled state */
+  cursor: no-drop;
+  /* Cursor to indicate the button is not clickable */
+}
+
+/* For Webkit browsers like Chrome and Safari */
+::ng-deep .blue-progress::-webkit-progress-value {
+  background-color: black;
+}
+
+/* For Firefox */
+::ng-deep.blue-progress::-moz-progress-bar {
+  background-color: black;
+}
+
+/* Fallback */
+::ng-deep .blue-progress {
+  color: black;
+  /* This should work in IE and Edge */
+}
+
+::ng-deep .k-checkbox:checked,
+.k-checkbox.k-checked {
+  border-color: #2962ff;
+  color: white;
+  background-color: #2962ff;
+}
+
+.green {
+  color: green;
+}
+
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+
+::ng-deep .k-button {
+  padding: 8px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Ensures space between upper and bottom containers */
+  height: 100%;
+  gap: 20px;
+  /* Adjust as needed */
+  padding: 20px 1px 1px;
+}
+
+.upper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Vertically centers the items in the container */
+  width: 100%;
+
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  /* Aligns items vertically in the center */
+  width: 100%;
+  /* Adds some space between the label and the TextBox */
+}
+
+.kendo-textbox {
+  flex-grow: 1;
+  /* Allows the TextBox container to grow and fill available space */
+  margin-left: auto;
+  /* Pushes the TextBox to the right, aligning it under the label if there's space */
+
+}
+
+/* Styles for the error message */
+.error-message {
+  width: 100%;
+  color: red;
+  /* Example color for error messages */
+  font-size: 0.8em;
+  /* Example font size for error messages */
+  padding-left: 106px
+    /* Adjust based on the actual padding of your container */
+}
+
+
+
+.upper-container,
+.bottom-container {
+  display: flex;
+  align-items: center;
+  /* Aligns items vertically in the center */
+}
+
+.kendo-label {
+  margin-right: 10px;
+  /* Adds some space between the label and the textbox */
+}
+
+.kendo-textbox-container {
+  display: flex;
+  align-items: center;
+  /* Centers the label and the TextBox vertically */
+}
+
+.bottom-container {
+  justify-content: flex-end;
+  /* Aligns buttons to the right */
+  gap: 10px;
+  /* Adds space between buttons */
+}
+
+//////////sucess-content-container
+.sucess-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // text-align: center;
+  height: 100%;
+}
+
+.status-icon {
+  color: #4CAF50;
+  height: 50px;
+  width: 50px;
+}
+
+.sucess-content-container h2 {
+  margin: 8px 0;
+  /* Spacing above and below the heading */
+  font-size: 24px;
+  font-weight: 410;
+  color: #555955;
+}

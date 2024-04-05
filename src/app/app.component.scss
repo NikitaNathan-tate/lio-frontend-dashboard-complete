@@ -1,0 +1,56 @@
+@use "/src/styles/abstracts/variables";
+
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.app-header {
+  height: 65px;
+}
+
+.app-content {
+  flex-grow: 1;
+  margin-top: -65px;
+  padding-top: 65px;
+  overflow-y: hidden;
+
+  .outlet-container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    color: inherit !important;
+
+    &.no-navbar {
+      height: 100%;
+    }
+
+    .mat-drawer {
+      max-width: 70%;
+      background-color: inherit !important;
+      color: inherit !important;
+      
+      &.views-menu {
+        min-width: 400px;
+        width: 450px;
+        
+      }
+    }
+  }
+}
+
+.app-footer {
+  height: 35px;
+  background-color: white;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-size: .75rem;
+  line-height: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

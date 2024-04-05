@@ -1,0 +1,9 @@
+$tb-primary-palette-name: grey;
+$tb-secondary-palette-name:grey;
+$primary-palette-name: $tb-primary-palette-name;
+$secondary-palette-name: $tb-secondary-palette-name;
+// $kendo-popup-text:rgba(0, 0, 0, 0.87);
+
+//@import "node_modules/@progress/kendo-theme-material/scss/grid";
+@import "node_modules/@progress/kendo-theme-material/dist/all";
+//@import "node_modules/@progress/kendo-theme-default/dist/all";

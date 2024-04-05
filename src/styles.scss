@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@use "styles/vendors/normalize";
+@use "styles/base/base";
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/mixins";
+
+// Must be imported before angular material
+@import "styles/vendors-extensions/kendo-ui";
+
+@import "styles/vendors-extensions/material";
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+
+:root {
+  --dynamic-font-size: 12px; /* Default font size */
+}
+
+
+html, body {
+  height: 100%;
+  background-color: white;
+  // font-size: var(--dynamic-font-size);
+}
+
+input[type="radio"] {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Chrome, Safari, Opera */
+  transform: scale(0.8);
+  color: black;
+}
+
+ 
+.colorcode {
+  color:functions.matColor(variables.$trapeze-palette-primary, 700);
+
+}
+
+.colorcode-hr-wrapper hr {
+  border-color:functions.matColor(variables.$trapeze-palette-primary, 700);
+}

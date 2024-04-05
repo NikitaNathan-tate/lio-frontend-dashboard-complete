@@ -1,0 +1,28 @@
+<div class="notification"
+     matRipple
+     [ngClass]="{
+      warning: notification.type === NotificationType.Warning,
+      info: notification.type === NotificationType.Info,
+      error: notification.type === NotificationType.Error
+   }"
+>
+    <ng-container class="type-container" [ngSwitch]="notification.type">
+    <ng-container *ngSwitchCase="NotificationType.Info" [ngTemplateOutlet]="infoTypeTemplate"></ng-container>
+    <ng-container *ngSwitchCase="NotificationType.Warning" [ngTemplateOutlet]="warningTypeTemplate"></ng-container>
+    <ng-container *ngSwitchCase="NotificationType.Error" [ngTemplateOutlet]="errorTypeTemplate"></ng-container>
+  </ng-container> 
+  <div class="text">{{ notification.text }}</div>
+  <div class="datetime">{{ notification.datetime | date:'dd/MM/YYYY, HH:mm:ss'}}</div>
+</div>
+
+<ng-template #infoTypeTemplate>
+  <span class="material-icons icon">info</span>
+</ng-template>
+
+<ng-template #warningTypeTemplate>
+  <span class="material-icons icon">warning</span>
+</ng-template>
+
+<ng-template #errorTypeTemplate>
+  <span class="material-icons icon">error</span>
+</ng-template>

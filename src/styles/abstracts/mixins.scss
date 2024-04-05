@@ -1,0 +1,24 @@
+@use '@angular/material' as mat;
+@use "variables";
+@use "functions";
+
+@mixin mediaMinWidth($size) {
+  @media (min-width: #{map-get(variables.$breakpoints, $size)}) {
+    @content;
+  }
+}
+
+@mixin textEllipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin card() {
+  background: functions.matColor(mat.$grey-palette, 50);
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.14);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}

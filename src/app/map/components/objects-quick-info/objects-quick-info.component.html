@@ -1,0 +1,20 @@
+<div class="badge-list">
+  <div class="badge" *ngIf="selectedStop">
+    <span class="material-icons icon">directions_bus</span>
+    <span class="text" title="Short Code">{{ selectedStop.shortcode }}</span>
+    <span class="text" title="Desc.">{{ selectedStop.langbezeichner }}</span>
+  </div>
+  <div class="badge" *ngIf="selectedStopPoint">
+    <span class="material-icons icon">directions_bus</span>
+    <span class="text" title="Stopping Point">{{ selectedStopPoint.stopname+'('+selectedStopPoint.stoppointnumber+')'}}</span>
+    <span class="text" title="gpskompassrichtung">{{ selectedStopPoint.gpskompassrichtung }}</span>
+  </div>
+  <div class="badge" *ngIf="mouseoverStopPoint">
+    <span class="text" title="Stopping Point">{{ mouseoverStopPoint.stopname+'('+mouseoverStopPoint.stoppointnumber+')'}}</span>    
+  </div>
+  <div class="badge" *ngIf="mouseoverPatternStopPoint">
+    <span class="material-icons icon">directions_bus</span>
+    <span class="text" title="Pattern Stopping Point">{{ mouseoverPatternStopPoint.stopname+'('+mouseoverPatternStopPoint.stoppointnumber+')'}}</span>     
+  </div>
+</div>
+

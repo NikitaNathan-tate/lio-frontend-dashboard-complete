@@ -1,0 +1,35 @@
+trigger:
+  - main
+  - develop
+
+pool:
+  name: IntlCCDevLinux
+
+steps:
+  - task: NodeTool@0
+    displayName: 'Use Node 18.16.x'
+    inputs:
+      versionSpec: 18.16.x
+
+  - script: 'npm install --loglevel verbose --no-audit'
+    displayName: 'Install NPM dependencies'
+
+
+  - script: 'npm run build -- --configuration production --base-href /Client/'
+    displayName: 'Build Libraries'
+
+  - task: CopyFiles@2
+    displayName: 'Copy build to artifacts folder'
+    inputs:
+      Contents: |
+        dist/**
+        package.json
+        README.md
+        CHANGELOG.md
+        .npmrc
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish build artifacts'
+    inputs:
+      ArtifactName: 'build-artifacts'

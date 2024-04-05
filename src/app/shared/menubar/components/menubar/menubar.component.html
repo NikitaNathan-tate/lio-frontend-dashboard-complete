@@ -1,0 +1,37 @@
+   
+<div class="window-container" >
+
+  <div *ngIf="loading" class="loading-container" [style.zIndex]="1111">
+      <app-custom-spinner></app-custom-spinner>
+    </div>
+
+    <!-- <div   *ngIf="!isTableEditor">
+    <kendo-window [title]="'Geo Editor'" [width]="windowWidth" [height]="windowHeight" 
+       [(top)]="top"
+      [(left)]="left" >      
+        <app-map-page class="mappage"  #mappagecomponent ></app-map-page>
+      </kendo-window>
+    </div> -->
+
+    <div class="window-wrap" #windowWrapper *ngIf="isTableEditor">
+    
+  <kendo-window class="kendowindow" 
+   *ngFor="let window of windows" modal="true" [title]="window.title" 
+   
+   >
+    <kendo-window-titlebar class="k-window-titlebar" >
+      <div class="k-window-title">{{window.title}}</div>
+      <button kendoWindowMinimizeAction></button>
+      <button kendoWindowMaximizeAction (click)="maximizeWindow()" ></button>
+      <button kendoWindowRestoreAction></button>
+      <button kendoWindowCloseAction (click)="closeWindow(window)"></button>
+    </kendo-window-titlebar>
+    <app-general-template [pageName]="window.title" [data]="window.data" [columns]="window.columns" [globalData]="window.data"
+     [isDropdownVisible]="window.isDropdownVisible"  [parameterName]="window.parameterName"  [windowParameters]="window.windowParameters" 
+     [tableName]="window.tableName" [childpageName]="window.childpageName" [childTableName]="window.childTableName"
+     [bvNumber]="window.bvNumber" [tableType] = "window.tableType" [columnFilterValues]="window.columnFilterValues"
+     [keysArray]="window.keysArray" [mapdisplay]="window.mapdisplay"></app-general-template>
+  </kendo-window>
+</div>
+  
+</div>

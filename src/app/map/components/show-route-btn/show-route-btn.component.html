@@ -1,0 +1,9 @@
+<div  *ngIf="isPatternLayer">
+<button mat-raised-button
+        class="show-route-btn"
+        title="Show pattern"
+        [ngClass]="{highlighted: isHighlighted}"
+        (click)="onShowRouteClick()">
+  <span class="material-icons icon">route</span>
+</button>
+</div>

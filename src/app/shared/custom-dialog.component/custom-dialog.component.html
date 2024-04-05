@@ -1,0 +1,35 @@
+<!-- custom-dialog.component.html -->
+<kendo-dialog   *ngIf="opened && isConfirmationDialog" (close)="close('cancel')" [minWidth]="250" [width]="450">
+    <kendo-dialog-titlebar>
+        <div [ngClass]="{'colorcode': true}" style="font-size: 18px; " >
+            <span class="k-icon k-font-icon k-i-question-circle" color="colorcode"  ></span> Question
+        </div>
+    </kendo-dialog-titlebar>
+     <hr color="colorcode" />
+    <div [ngClass]="{'colorcode': true}">
+        <p style="margin: 10px; text-align: center;">{{confirmationMessage}}
+        </p>
+    </div>
+    <kendo-dialog-actions [layout]="actionsLayout">
+        <button kendoButton (click)="onNoButtonClick()">No</button>
+        <button kendoButton (click)="onYesButtonClick()" themeColor="primary">Yes</button>
+    </kendo-dialog-actions>
+</kendo-dialog>
+
+<kendo-dialog *ngIf="opened && isInformationDialog" (close)="onDialogClose()" [width]="300"
+[height]="200">
+    <kendo-dialog-titlebar>
+        <div [ngClass]="{'colorcode': true}" style="font-size: 18px; " >
+            <span class="k-icon k-font-icon k-i-exclamation-circle" color="colorcode"  ></span> Information
+        </div>
+    </kendo-dialog-titlebar>
+    <hr class="custom-hr" color="colorcode" />
+     <div [ngClass]="{'colorcode': true}">
+        <p style="margin: 5px; text-align: center;">{{confirmationMessage}}
+        </p>
+    </div>
+
+    <kendo-dialog-actions  [layout]="actionsLayout"> 
+        <button kendoButton (click)="onDialogClose()" fillMode="flat">Ok</button>
+    </kendo-dialog-actions> 
+</kendo-dialog>

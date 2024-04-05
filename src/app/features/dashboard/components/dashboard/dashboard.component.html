@@ -1,0 +1,340 @@
+<div class="dashboard-outlet-container">
+    <div class="dashboard-container">
+        <kendo-splitter orientation="vertical" style="height: 100%;" class="white-bordered-splitter">
+            <kendo-splitter-pane size="40%">
+                <kendo-splitter>
+                    <kendo-splitter-pane class="custom-pane custom-pane-editable-base" size="49.5%">
+                        <div class="custom-kendo-splitter-pane-container">
+                            <div class="fixed-header"
+                                style="display: flex; justify-content: space-between; align-items: center;">
+                                <p class="heading">EDITABLE BASE VERSIONS &nbsp;[{{editableBaseVersions?.length}}]</p>
+                                <button kendoButton class="feature-button" (click)="openCreateVersion()">New</button>
+ 
+                            </div>
+                            <div class="custom-kendo-splitter-pane-container-body">
+                                <kendo-grid [data]="editableBaseVersions" [hideHeader]="true"
+                                    [style]="{ height: '100%' }" scrollable="scrollable"
+                                    style="vertical-align: baseline;">
+                                    <kendo-grid-column field="bvnumber" title="ID" [width]="20">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div style="font-weight: 410;">{{ dataItem.bvnumber }}</div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column field="versionName" title="Version Name">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div style="font-weight: 410;">{{ dataItem.baseversionsname }}</div>
+                                            <div style="font-size: smaller; color: gray;"
+                                                *ngIf="dataItem.quality && dataItem.state">
+                                                <span>Quality&nbsp;</span>
+                                                <span
+                                                    [class]="getQualityClass(dataItem.quality)">{{dataItem.quality}}</span>&nbsp;&nbsp;
+                                                <span>State&nbsp;</span>
+                                                <span [class]="getStateClass(dataItem.state)">{{dataItem.state}}</span>
+                                            </div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="Build Progress" [width]="150">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div *ngIf="dataItem.process && dataItem.process!==null"
+                                                style="display:grid; align-items: center; text-align: center; margin-right: 10px; margin-left: 10px; padding-right: 10px; padding-left: 10px;">
+                                                <progress style="width: 100%; align-items: center;"
+                                                    value="{{ dataItem.process.progress }}" max="100"></progress>
+                                                <span
+                                                    style="font-size:smaller; color: grey;">{{dataItem.process.name}}&nbsp;-&nbsp;{{dataItem.process.progress}}%&nbsp;</span>
+                                            </div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="View" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <button kendoButton fillMode="flat">
+                                                <mat-icon style="vertical-align: middle;">search</mat-icon>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="Edit" [width]="50">
+                                        <ng-template kendoGridCellTemplate  let-dataItem>
+                                            <button kendoButton fillMode="flat"
+                                            (click)="navigatePage(['menu'],dataItem.baseversionsname,dataItem.bvnumber )">
+                                             <mat-icon
+                                                    style="vertical-align: middle;">edit</mat-icon>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="Options" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <kendo-dropdownbutton fillMode="flat" size="small"
+                                                [data]="baseVersionDropDownItems"> <mat-icon
+                                                    style="vertical-align: middle;">more_vert</mat-icon>
+                                            </kendo-dropdownbutton>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                </kendo-grid>
+                            </div>
+                        </div>
+                    </kendo-splitter-pane>
+                    <kendo-splitter-pane class="custom-pane custom-pane-released-base">
+                        <div class="custom-kendo-splitter-pane-container">
+                            <div class="fixed-header">
+                                <p class="heading">RELEASED BASE VERSIONS &nbsp; [{{releaseBaseVersions?.length}}]</p>
+                            </div>
+                            <div class="custom-kendo-splitter-pane-container-body">
+                                <kendo-grid [data]="releaseBaseVersions" [hideHeader]="true"
+                                    [style]="{ height: '100%' }" scrollable="scrollable"
+                                    style="vertical-align: baseline;">
+                                    <kendo-grid-column field="bvnumber" title="ID" [width]="75">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div
+                                                style="display: flex; align-items: start; height: 100%; font-weight: 410;">
+                                                {{ dataItem.bvnumber }}</div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column field="versionName" title="Version Name">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div style="font-weight: 410;">{{ dataItem.source }}</div>
+                                            <div style="font-size: smaller; color: gray;"
+                                                *ngIf="dataItem.quality && dataItem.state">
+                                                <div> <span>Quality&nbsp;</span>
+                                                    <span
+                                                        [class]="getQualityClass(dataItem.quality)">{{dataItem.quality}}</span>&nbsp;&nbsp;
+                                                    <span>From&nbsp;</span>
+                                                    <span
+                                                        style="font-weight: 300; color: black;">{{dataItem.fromdate}}</span>&nbsp;&nbsp;
+                                                    <span>Until&nbsp;</span>
+                                                    <span
+                                                        style="font-weight: 300; color: black;">{{dataItem.untildate}}</span>
+                                                </div>
+                                                <div>
+                                                    <span>State&nbsp;</span>
+                                                    <span
+                                                        [class]="getStateClass(dataItem.state)">{{dataItem.state}}</span>&nbsp;&nbsp;
+                                                    <span>Finalisation&nbsp;</span>
+                                                    <span
+                                                        style="font-weight: 300; color: black;">{{dataItem.finalizationtime}}</span>
+                                                </div>
+                                            </div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="Build Progress" [width]="175">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div *ngIf="dataItem.process && dataItem.process!=null"
+                                                style="display: flex;align-items: center;">
+                                                <span
+                                                    style="font-size:small; color: gray ;">{{dataItem.process.progress}}%&nbsp;</span>
+                                                <progress background-color: #e0e0e0;
+                                                    value="{{ dataItem.process.progress }}" max="100"></progress>
+                                            </div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="View" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <button kendoButton fillMode="flat">
+                                                <mat-icon style="vertical-align: middle;">search</mat-icon>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="Edit" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <button kendoButton fillMode="flat"> <mat-icon
+                                                    style="vertical-align: middle;">edit</mat-icon>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="Options" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <kendo-dropdownbutton fillMode="flat" size="small"
+                                                [data]="releasedVersionDropDownItems"> <mat-icon
+                                                    style="vertical-align: middle;">more_vert</mat-icon>
+                                            </kendo-dropdownbutton>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                </kendo-grid>
+                            </div>
+                        </div>
+                    </kendo-splitter-pane>
+                </kendo-splitter>
+            </kendo-splitter-pane>
+ 
+            <kendo-splitter-pane>
+                <kendo-splitter>
+                    <kendo-splitter-pane size="75%">
+                        <kendo-splitter orientation="vertical">
+                            <kendo-splitter-pane size="45%" class="custom-pane custom-pane-active-session">
+                                <div class="custom-kendo-splitter-pane-container">
+                                    <div class="fixed-header" style="display: flex; justify-content: space-between; align-items: center;">
+                                        <p class="heading">ACTIVE SESSIONS [{{activeSessionData?.length}}]</p>
+                                        <button kendoButton class="feature-button"
+                                            *ngIf="selectedItemCountOfActiveSess">Delete</button>
+                                    </div>
+                                    <div class="custom-kendo-splitter-pane-container-body">
+                                        <app-activesession [dataSource]="activeSessionData"
+                                            (selectionCount)="handleSelectionCount($event)"></app-activesession>
+                                    </div>
+                                </div>
+                            </kendo-splitter-pane>
+ 
+                            <kendo-splitter-pane style="border-bottom: solid #f1f1f1;"
+                                class="custom-pane custom-pane-user-activity">
+                                <div class="custom-kendo-splitter-pane-container">
+                                    <div class="fixed-header">
+                                        <p class="heading">USER ACTIVITY [{{userActivityLogData?.length}}]</p>
+                                    </div>
+                                    <div class="custom-kendo-splitter-pane-container-body">
+                                        <app-useractivitylog style="height: 100%;"
+                                            [userActivityLog]="userActivityLogData"></app-useractivitylog>
+                                    </div>
+                                </div>
+                            </kendo-splitter-pane>
+                        </kendo-splitter>
+                    </kendo-splitter-pane>
+                    <kendo-splitter-pane class="custom-pane custom-pane-extra-pane">
+                        <div class="custom-kendo-splitter-pane-container pane-content"
+                            style="display: flex; flex-direction: column; height: 85%; overflow-y: auto;">
+                            <div class="fixed-header">
+                                <p class="heading">LAST DATA IMPORT&nbsp;[{{lastImportedBaseVersions?.length}}]</p>
+                            </div>
+                            <div class="scrollable-content" style="flex-grow: 1; overflow-y: auto;">
+                                <kendo-grid [data]="lastImportedBaseVersions" class="hide-grid-header"
+                                    [hideHeader]="true" style="vertical-align: baseline;">
+                                    <kendo-grid-column field="bvnumber" title="ID" [width]="30">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div style="font-weight: 410;">{{ dataItem.bvnumber }}</div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column field="versionName" title="Version Name">
+                                        <ng-template kendoGridCellTemplate let-dataItem>
+                                            <div style="font-weight: 410;">{{ dataItem.baseversionsname }}</div>
+                                            <div style="font-size: smaller; color: gray;"
+                                                *ngIf="dataItem.quality && dataItem.state">
+                                                <span>Quality&nbsp;</span>
+                                                <span
+                                                    [class]="getQualityClass(dataItem.quality)">{{dataItem.quality}}</span>&nbsp;&nbsp;
+                                                <span>State&nbsp;</span>
+                                                <span [class]="getStateClass(dataItem.state)">{{dataItem.state}}</span>
+                                            </div>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <kendo-grid-column title="View" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <button kendoButton fillMode="flat">
+                                                <mat-icon style="vertical-align: middle;">search</mat-icon>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                    <!-- <kendo-grid-column title="Edit" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <button kendoButton fillMode="flat"> <mat-icon
+                                                    style="vertical-align: middle;">edit</mat-icon>
+                                            </button>
+                                        </ng-template>
+                                    </kendo-grid-column> -->
+                                    <kendo-grid-column title="Options" [width]="50">
+                                        <ng-template kendoGridCellTemplate>
+                                            <kendo-dropdownbutton fillMode="flat" size="small"
+                                                [data]="lastDataImportDropDownItems"> <mat-icon
+                                                    style="vertical-align: middle;">more_vert</mat-icon>
+                                            </kendo-dropdownbutton>
+                                        </ng-template>
+                                    </kendo-grid-column>
+                                </kendo-grid>
+                            </div>
+                        </div>
+                        <div class="recycled-versions-container">
+ 
+                            <div style="padding-top:5px;background-color:ghostwhite;">
+                                <div>
+                                    <span
+                                        style="color: #555955;  font-weight: 410;  font-size: 15px; margin-left: 10px; ">
+                                        &nbsp;Number of recycled base versions:
+                                        {{deletedBaseVersionsCount}}/{{maxBaseVersionsCount}}</span>
+                                    <button kendoTooltip title="Recycle Bin Items" style="margin-left: 15px;"
+                                        kendoButton (click)="openRecycledBaseVersion()"
+                                        fillMode="flat"><mat-icon>delete_sweep</mat-icon></button>
+ 
+                                </div>
+                            </div>
+ 
+ 
+                        </div>
+                    </kendo-splitter-pane>
+                </kendo-splitter>
+            </kendo-splitter-pane>
+        </kendo-splitter>
+    </div>
+</div>
+ 
+<!-- Center popup code -->
+ 
+<center-popup *ngIf="showCreateNewVersionPopup" [heading]="'CREATE BASE VERSION'"
+    (closePopup)="onCloseCreateNewBaseVersion()" [height]="'200px'" [width]="'600px'">
+    <div class="content-container" [formGroup]="form"
+        *ngIf="showCreateNewVersionPopup && showCreateNewVersionPopupContent">
+        <div class="upper-container">
+            <div class="input-container">
+                <label kendoLabel for="baseVersion" class="kendo-label">BV Description:</label>
+                <div class="kendo-textbox">
+                    <input kendoTextBox formControlName="baseVersion" id="baseVersion" class="kendo-textbox" />
+                </div>
+            </div>
+            <div *ngIf="form.controls.baseVersion.errors && (form.controls.baseVersion.dirty || form.controls.baseVersion.touched)"
+                class="error-message">
+                <span *ngIf="form.controls.baseVersion.errors['required']">{{
+                    form.controls.baseVersion.errors['required'] }}</span>
+                <span *ngIf="form.controls.baseVersion.errors['maxlength']">{{
+                    form.controls.baseVersion.errors['maxlength'] }}</span>
+                <span *ngIf="form.controls.baseVersion.errors['invalidCharacter']">{{
+                    form.controls.baseVersion.errors['invalidCharacter'] }}</span>
+            </div>
+        </div>
+        <div class="bottom-container">
+            <button kendoButton class="feature-button" [disabled]="form.invalid"
+                (click)="onCreateNewBaseVersion()">Create</button>
+        </div>
+    </div>
+</center-popup>
+ 
+<center-popup *ngIf="showRecycleBinPopup" [heading]="'RECYCLE BIN ITEMS'" [height]="'300px'" [width]="'600px'"
+    (click)="closeRecycledBaseVersion()">
+    <div class="content-container">
+        <div class="upper-container">
+            <kendo-grid [data]="editableBaseVersions" class="hide-grid-header" [hideHeader]="true"
+                style="vertical-align: baseline;">
+                <kendo-grid-column field="bvnumber" title="ID" [width]="30"
+                    [style]="{'text-align': 'center', verticalAlign: 'middle',fontWeight: '410' }">
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <div>{{ dataItem.bvnumber }}</div>
+                    </ng-template>
+                </kendo-grid-column>
+                <kendo-grid-column field="versionName" title="Version Name">
+                    <ng-template kendoGridCellTemplate let-dataItem>
+                        <div>{{ dataItem.baseversionsname }}</div>
+                    </ng-template>
+                </kendo-grid-column>
+                <kendo-grid-column title="View" [width]="50">
+                    <ng-template kendoGridCellTemplate>
+                        <button kendoButton fillMode="flat">
+                            <mat-icon style="vertical-align: middle;">search</mat-icon>
+                        </button>
+                    </ng-template>
+                </kendo-grid-column>
+                <kendo-grid-column title="undo" [width]="50">
+                    <ng-template kendoGridCellTemplate>
+                        <button kendoButton fillMode="flat"> <mat-icon style="vertical-align: middle;">undo</mat-icon>
+                        </button>
+                    </ng-template>
+                </kendo-grid-column>
+                <kendo-grid-column title="delete" [width]="50">
+                    <ng-template kendoGridCellTemplate>
+                        <button kendoButton fillMode="flat"> <mat-icon style="vertical-align: middle;">delete</mat-icon>
+                        </button>
+                    </ng-template>
+                </kendo-grid-column>
+            </kendo-grid>
+ 
+        </div>
+        <div class="bottom-container">
+            <button kendoButton class="feature-button">empty recycle bin</button>
+ 
+        </div>
+    </div>
+</center-popup>
+ 

@@ -1,0 +1,177 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/functions";
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/mixins";
+
+$map-button-z-index: 3;
+
+.map-container {
+  $map-control-margin: 0.7rem;
+  $maplayer-control-margin: 0.1rem;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+
+  .app-loading-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 999;
+    background: transparent;
+  }
+  .layer-wrapper {
+    position: relative;
+    z-index: 1;
+    left: #{$map-control-margin};
+    top: #{$maplayer-control-margin};
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    .kendo-tabstrip p {
+      margin: 0;
+    }
+    .kendo-combobox
+    {
+      width: 300px;
+      height: fit-content;
+    }
+    
+  }
+  .map-wrapper {
+    border-radius: 4px;
+    .map {
+      z-index: 1;
+      width: 100%;
+      height: 75%;
+      position: absolute;
+      background-color: variables.$light-bg-color;
+      cursor: pointer;
+    }
+    
+  }
+  .contextMenu {
+    background-color: #eee;
+    position: absolute;
+    
+    width: 100px;
+    z-index: #{$map-button-z-index};
+    left: #{$map-control-margin};
+    top: #{$map-control-margin}+2rem;
+    }
+    .contextMenu .menuItem {
+      border: solid 1px black;
+        cursor: pointer;
+        padding: 5px;
+    }
+    .contextMenu .menuItem:hover {
+      background-color: #ccc;
+    }
+  .buttons-overlay-panel {
+    user-select: none;
+    position: absolute;
+    z-index: #{$map-button-z-index};
+    right: #{$map-control-margin};
+    bottom: #{$map-control-margin};
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .quick-info {
+    position: absolute;
+    z-index: #{$map-button-z-index};
+    left: #{$map-control-margin};
+    top: #{$map-control-margin}+2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .ol-overviewmap, .ol-overviewmap.ol-uncollapsible {
+    left: #{$map-control-margin};
+    bottom: #{$map-control-margin};
+  }
+
+  .ol-overviewmap .ol-overviewmap-map {
+    height: 65px;
+    width: 135px;
+    border: unset;
+    border-radius: 4px;
+    box-shadow: variables.$mat-elevation-z5;
+    padding: 0.25rem;
+    background: functions.matColor(mat.$grey-palette, 50);
+  }
+
+  .ol-overviewmap-box {
+    border-radius: 2px;
+    border: 1px dotted variables.$primary-color;
+    background: rgb(178, 49, 89, 0.25);
+  }
+}
+
+.drag-and-drop-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgb(255 255 255 / 50%);
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  z-index: 4;
+  border: 4px dashed functions.matColor(mat.$grey-palette, 400);
+
+  &:after {
+    content: "SHOW ON MAP";
+    font-weight: 700;
+    color: functions.matColor(mat.$grey-palette, 500);
+    font-size: 1.5rem;
+  }
+}
+
+@include mixins.mediaMinWidth(md-small) {
+  .map-container {
+    .ol-overviewmap .ol-overviewmap-map {
+      height: 70px;
+      width: 140px;
+    }
+  }
+}
+
+@include mixins.mediaMinWidth(md-large) {
+  .map-container {
+    .ol-overviewmap .ol-overviewmap-map {
+      height: 80px;
+      width: 160px;
+    }
+  }
+}
+
+@include mixins.mediaMinWidth(lg-small) {
+  .map-container {
+    .ol-overviewmap .ol-overviewmap-map {
+      height: 90px;
+      width: 180px;
+    }
+  }
+}
+
+@include mixins.mediaMinWidth(lg-xxxlarge) {
+  .map-container {
+    .ol-overviewmap .ol-overviewmap-map {
+      height: 110px;
+      width: 220px;
+    }
+  }
+}
+
+@include mixins.mediaMinWidth(xlg-small) {
+  .map-container {
+    .ol-overviewmap .ol-overviewmap-map {
+      height: 125px;
+      width: 250px;
+    }
+  }
+}

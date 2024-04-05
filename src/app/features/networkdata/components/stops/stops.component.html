@@ -1,0 +1,424 @@
+<div class="stops-container">
+  <div class="toolbar">
+    <ng-container >
+  
+      <!-- NAME -->
+      <div class="page-name">{{ 'Stops' | uppercase }}</div>
+  
+      <!-- DELIMITER -->
+      <span class="delimiter"></span>
+  
+    </ng-container>
+  </div>
+    <kendo-grid 
+                [kendoGridBinding]="mockedStops"
+                [pageSize]="pageSize"
+                [pageable]="true"
+                [skip]="skip"
+                (pageChange)="pageChange($event)"
+                [sortable]="true"
+                [autoSize]="false"
+                [sort]="sortDescriptor"
+                [reorderable]="true"
+                [filterable]="'row'"
+                [resizable]="true"
+                [groupable]="false"
+                [columnMenu]="columnMenu"
+                [filter]="filter"
+                >
+                 
+      
+      <!-- stop -->
+      <kendo-grid-column title="Number"
+                         field="stopNumber"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.stopNumber.minWidth"
+                         [width]="stopNumberColumnWidth"
+                         [maxResizableWidth]="columnWidth.stopNumber.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-numeric-filter-cell [column]="column"
+                                          [filter]="filter"
+                                          [step]="1"
+                                          [decimals]="0"
+                                          [format]="doNotCommaSeparateNumberFormat"
+                                          operator="eq">
+            <kendo-filter-lt-operator></kendo-filter-lt-operator>
+            <kendo-filter-eq-operator></kendo-filter-eq-operator>
+            <kendo-filter-gt-operator></kendo-filter-gt-operator>
+          </kendo-grid-numeric-filter-cell>
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <div class="stopNumber">
+            <ng-container *ngIf="dataItem.stopNumber!==undefined; else unknownValueTemplate">
+              {{ dataItem.stopNumber }}
+            </ng-container>
+          </div>
+        </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Abbr."
+                         field="shortCode"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.stop.minWidth"
+                         [width]="stopColumnWidth"
+                         [maxResizableWidth]="columnWidth.stop.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Abbr."
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Name"
+                field="longDescription"
+                filter="text"
+                [hidden]="false"
+                [includeInChooser]="true"
+                [minResizableWidth]="columnWidth.longDescription.minWidth"
+                [width]="longDescriptionColumnWidth"
+                [maxResizableWidth]="columnWidth.longDescription.maxWidth">
+            <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+            <kendo-grid-string-filter-cell [column]="column"
+                                [filter]="filter"
+                                title="Name"
+                                operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+            </kendo-grid-string-filter-cell>
+            </ng-template>
+
+        </kendo-grid-column>
+  
+        <kendo-grid-column title="Long Number"
+            field="longNumber"
+            [hidden]="false"
+            [includeInChooser]="true"
+            [minResizableWidth]="columnWidth.longNumber.minWidth"
+            [width]="longNumberColumnWidth"
+            [maxResizableWidth]="columnWidth.longNumber.maxWidth">
+          <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+              <kendo-grid-numeric-filter-cell [column]="column"
+                                      [filter]="filter"
+                                      [step]="1"
+                                      [decimals]="0"
+                                      [format]="doNotCommaSeparateNumberFormat"
+                                      operator="eq">
+              <kendo-filter-lt-operator></kendo-filter-lt-operator>
+              <kendo-filter-eq-operator></kendo-filter-eq-operator>
+              <kendo-filter-gt-operator></kendo-filter-gt-operator>
+              </kendo-grid-numeric-filter-cell>
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem>
+              <div class="longNumber">
+              <ng-container *ngIf="dataItem.longNumber!==undefined; else unknownValueTemplate">
+              {{ dataItem.longNumber }}
+              </ng-container>
+              </div>
+          </ng-template>
+        </kendo-grid-column>
+  
+        <kendo-grid-column title="Tariff Zone"
+              field="zoneWabe"
+              [hidden]="false"
+              [includeInChooser]="true"
+              [minResizableWidth]="columnWidth.zoneWabe.minWidth"
+              [width]="zoneWabeColumnWidth"
+              [maxResizableWidth]="columnWidth.zoneWabe.maxWidth">
+      <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-numeric-filter-cell [column]="column"
+                                  [filter]="filter"
+                                  [step]="1"
+                                  [decimals]="0"
+                                  [format]="doNotCommaSeparateNumberFormat"
+                                  operator="eq">
+          <kendo-filter-lt-operator></kendo-filter-lt-operator>
+          <kendo-filter-eq-operator></kendo-filter-eq-operator>
+          <kendo-filter-gt-operator></kendo-filter-gt-operator>
+          </kendo-grid-numeric-filter-cell>
+      </ng-template>
+      <ng-template kendoGridCellTemplate let-dataItem>
+          <div class="zoneWabe">
+          <ng-container *ngIf="dataItem.zoneWabe!==undefined; else unknownValueTemplate">
+          {{ dataItem.zoneWabe }}
+          </ng-container>
+          </div>
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="IBIS Name"
+                         field="ibisName"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.ibisName.minWidth"
+                         [width]="ibisNameColumnWidth"
+                         [maxResizableWidth]="columnWidth.ibisName.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="IBIS Name"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+
+      <kendo-grid-column title="TLP Mode"
+                         field="tlpMode"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.tlpMode.minWidth"
+                         [width]="tlpModeValueColumnWidth"
+                         [maxResizableWidth]="columnWidth.tlpMode.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="TLP Mode"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <kendo-dropdownlist [data]="tlpModeFilterValues"
+                              [value]="tlpModeFilter"
+                              textField="text"
+                              valueField="value"
+                              >
+          </kendo-dropdownlist>
+        </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Veh. Announcement Text"
+                         field="vehAnnouncementText"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.vehAnnouncementText.minWidth"
+                         [width]="vehAnnouncementTextColumnWidth"
+                         [maxResizableWidth]="columnWidth.vehAnnouncementText.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Veh. Announcement Text"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+      <kendo-grid-column title="Stop Points"
+                         field="stopPoints"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.stopPoints.minWidth"
+                         [width]="stopPointsColumnWidth"
+                         [maxResizableWidth]="columnWidth.stopPoints.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Stop Points"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+      <kendo-grid-column title="Fare Point Name"
+                         field="farePointName"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.farePointName.minWidth"
+                         [width]="farePointNameColumnWidth"
+                         [maxResizableWidth]="columnWidth.farePointName.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Fare Point Name"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+
+      <kendo-grid-column title="MFD Transfer Screen"
+                         field="mfdTransferScreen"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.mfdTransferScreen.minWidth"
+                         [width]="mfdTransferScreenColumnWidth"
+                         [maxResizableWidth]="columnWidth.mfdTransferScreen.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="MFD Transfer Screen"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Preview Time"
+                         field="previewTime"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.previewTime.minWidth"
+                         [width]="previewTimeColumnWidth"
+                         [maxResizableWidth]="columnWidth.previewTime.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Preview Time"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Import State"
+                         field="importState"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.importState.minWidth"
+                         [width]="importStateColumnWidth"
+                         [maxResizableWidth]="columnWidth.importState.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Import State"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+  
+      <kendo-grid-column title="Latitude"
+                         field="latitude"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.latitude.minWidth"
+                         [width]="latitudeColumnWidth"
+                         [maxResizableWidth]="columnWidth.latitude.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-numeric-filter-cell [column]="column"
+                                          [filter]="filter"
+                                          [step]="1"
+                                          [decimals]="0"
+                                          [format]="doNotCommaSeparateNumberFormat"
+                                          operator="eq">
+            <kendo-filter-lt-operator></kendo-filter-lt-operator>
+            <kendo-filter-eq-operator></kendo-filter-eq-operator>
+            <kendo-filter-gt-operator></kendo-filter-gt-operator>
+          </kendo-grid-numeric-filter-cell>
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <div class="latitude">
+            <ng-container *ngIf="dataItem.latitude!==undefined; else unknownValueTemplate">
+              {{ dataItem.latitude }}
+            </ng-container>
+          </div>
+        </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Longitude"
+                         field="longitude"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.longitude.minWidth"
+                         [width]="longitudeColumnWidth"
+                         [maxResizableWidth]="columnWidth.longitude.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-numeric-filter-cell [column]="column"
+                                          [filter]="filter"
+                                          [step]="1"
+                                          [decimals]="0"
+                                          [format]="doNotCommaSeparateNumberFormat"
+                                          operator="eq">
+            <kendo-filter-lt-operator></kendo-filter-lt-operator>
+            <kendo-filter-eq-operator></kendo-filter-eq-operator>
+            <kendo-filter-gt-operator></kendo-filter-gt-operator>
+          </kendo-grid-numeric-filter-cell>
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <div class="longitude">
+            <ng-container *ngIf="dataItem.longitude!==undefined; else unknownValueTemplate">
+              {{ dataItem.longitude }}
+            </ng-container>
+          </div>
+        </ng-template>
+      </kendo-grid-column>
+
+      <kendo-grid-column title="Commentary"
+                         field="commentary"
+                         filter="text"
+                         [hidden]="false"
+                         [includeInChooser]="true"
+                         [minResizableWidth]="columnWidth.commentary.minWidth"
+                         [width]="commentaryColumnWidth"
+                         [maxResizableWidth]="columnWidth.commentary.maxWidth">
+        <ng-template kendoGridFilterCellTemplate let-filter let-column="column">
+          <kendo-grid-string-filter-cell [column]="column"
+                                         [filter]="filter"
+                                         title="Commentary"
+                                         operator="contains">
+            <kendo-filter-contains-operator></kendo-filter-contains-operator>
+            <kendo-filter-not-contains-operator></kendo-filter-not-contains-operator>
+            <kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+            <kendo-filter-endswith-operator></kendo-filter-endswith-operator>
+          </kendo-grid-string-filter-cell>
+        </ng-template>
+        
+      </kendo-grid-column>
+
+    </kendo-grid>
+  
+  </div>
+  
+  <ng-template #unknownValueTemplate>
+    <span class="unknown-value">(unknown)</span>
+  </ng-template>
+  

@@ -1,0 +1,1 @@
+export type MarkerType = 'detailed' | 'generic' | 'hidden';

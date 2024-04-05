@@ -1,0 +1,49 @@
+<kendo-gridlayout style="height: 100%; display: flex; flex-direction: column;"
+ [align]="{ horizontal: 'stretch', vertical: 'stretch' }" 
+ [rows]="[ { height: '10%' }, { height: '10%' }, { height: '70%' }, { height: '10%' }]" [cols]="[{ width: '98%' }]">
+  <kendo-gridlayout-item [row]="0" [col]="0" [rowSpan]="1" [colSpan]="2">
+    <div style="text-align: right;">
+      <button kendoButton fillMode="flat" title="View" [mat-dialog-close]="true">
+        <mat-icon class="close-icon">close</mat-icon>
+      </button>
+    </div>
+  </kendo-gridlayout-item>
+
+  <kendo-gridlayout-item [row]="1" [col]="0" [rowSpan]="1" [colSpan]="2">
+    <div [ngClass]="{'colorcode': true}" style="flex: 0 0 10%; font-size: 16px; padding: 10px;">
+      <kendo-label text="ACTIVE SESSIONS"></kendo-label>
+    </div>
+  </kendo-gridlayout-item>
+
+  <kendo-gridlayout-item [row]="2" [col]="0" [rowSpan]="3" [colSpan]="2">
+    <div style="flex: 1; overflow: auto;">
+      <kendo-grid [data]="activeSessions" [resizable]="true" [size]="smallSize" [selectable]="true" (selectionChange)="onSelectionChange($event)">
+        <kendo-grid-checkbox-column title="Remove Session"></kendo-grid-checkbox-column>
+        <ng-container *ngFor="let column of columns">
+          <kendo-grid-column [field]="column.title" [hidden]="column.hidden">
+            <ng-template kendoGridCellTemplate let-dataItem>
+              <div class="gridCell">
+                {{ dataItem.bvnumber  }}
+              </div>
+            </ng-template>
+          </kendo-grid-column>
+        </ng-container>
+      </kendo-grid>
+    </div>
+  </kendo-gridlayout-item>
+
+  <kendo-gridlayout-item [row]="3" [col]="0" [rowSpan]="1" [colSpan]="2">
+    <div style="flex: 0 0 20%; padding: 10px;">
+      <button kendoButton [size]="size" (click)="RemoveSelectedSessions()" fillMode="flat">Remove Selected Sessions</button>
+      <button kendoButton (click)="CloseSessions()" fillMode="flat" style="margin-left: 10px;">Ok</button>
+    </div>
+  </kendo-gridlayout-item>
+
+  <kendo-gridlayout-item [row]="6" [col]="0" [rowSpan]="1" [colSpan]="2">
+    <app-custom-dialog [opened]="openMessageDialog" (yesClick)="onYesButtonClick()" (noClick)="onNoButtonClick()" [confirmationMessage]="message" [isConfirmationDialog]="true"></app-custom-dialog>
+  </kendo-gridlayout-item>
+
+  <kendo-gridlayout-item [row]="7" [col]="0" [rowSpan]="1" [colSpan]="2">
+    <app-custom-dialog [opened]="openInfoDialog" [confirmationMessage]="message" [isInformationDialog]="true"></app-custom-dialog>
+  </kendo-gridlayout-item>
+</kendo-gridlayout>

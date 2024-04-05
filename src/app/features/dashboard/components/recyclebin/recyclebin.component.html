@@ -1,0 +1,32 @@
+ <div style="text-align: right;">
+      <button kendoButton fillMode="flat" title="View" [mat-dialog-close]="true">
+        <mat-icon class="close-icon">close</mat-icon>
+      </button>
+    </div>
+
+    <div [ngClass]="{'colorcode': true}" style="flex: 0 0 10%; font-size: 22px; padding: 10px;">
+      <kendo-label text="Recyle Bin"></kendo-label>
+    </div>
+  <hr color="colorcode" />
+    <div style="flex: 1; overflow: auto; padding-bottom: 30%;">
+        <kendo-listview [data]="recycleBinComponents" containerClass="k-d-flex k-flex-col k-flex-nowrap">
+            <ng-template kendoListViewItemTemplate let-dataItem="dataItem">
+                <div style="display: flex; align-items: center; padding-left: 10px;">
+                  <div style="flex-grow: 1;">
+                    {{ dataItem.bvnumber }}{{ dataItem.baseversionsname }}
+                  </div>
+                  <button kendoButton (click)="navigatePage(['menu'],dataItem.baseversionsname,dataItem.bvnumber)"  icon="zoom" fillMode="flat" title="View"></button>
+                  <button kendoButton (click)="restorebv(dataItem.bvnumber)" icon="restore" title="Restore" fillMode="flat"></button>
+                  <button kendoButton (click)="deletebv(dataItem.bvnumber)" icon="delete" title="Delete" fillMode="flat"></button>
+                </div>
+              </ng-template>
+              
+          </kendo-listview>
+    </div>
+    <div style="display: flex; justify-content: flex-end; padding: 10px;">
+      <button kendoButton [size]="size" (click)="EmptyRecycleBin()" fillMode="flat">Empty recycle bin</button>
+      <button kendoButton (click)="Cancel()" fillMode="flat"  >Cancel</button>
+    </div>
+
+    <app-custom-dialog [opened]="openMessageDialog" (yesClick)="onYesButtonClick()" (noClick)="onNoButtonClick()" [confirmationMessage]="message" [isConfirmationDialog]="true"></app-custom-dialog>
+

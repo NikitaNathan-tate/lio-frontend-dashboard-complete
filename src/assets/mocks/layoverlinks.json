@@ -1,0 +1,5 @@
+[
+    { "primaryKeyDuid": 1, "from": "HOST(2)", "to": "AU(1)", "operatingBranch": "undef", "distance": 50 },
+    { "primaryKeyDuid": 2, "from": "SO(1)", "to": "NORB(1)", "operatingBranch": "undef", "distance": 12562 },
+    { "primaryKeyDuid": 3, "from": "SCHB(2)", "to": "STAO(3)", "operatingBranch": "undef", "distance": 594 }
+  ]

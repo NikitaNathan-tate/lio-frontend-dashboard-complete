@@ -1,0 +1,6 @@
+@use '@angular/material' as mat;
+
+@function matColor($matPalette, $hue) {
+  $palette: mat.define-palette($matPalette);
+  @return mat.get-color-from-palette($palette, $hue);
+}

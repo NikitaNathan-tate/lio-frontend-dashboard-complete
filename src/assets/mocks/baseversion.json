@@ -1,0 +1,103 @@
+[
+   {
+       "baseversionsid": 7,
+       "bvnumber": 240320,
+       "baseversionsname": "Daten_aktuell",
+       "quality": "Ok",
+       "source": "Daten_aktuell",
+       "fromdate": "20/03/2024",
+       "untildate": "27/03/2024",
+       "state": "Available",
+       "baseversiontype": "Release",
+       "finalizationtime": "20/03/2024 11:10:36",
+       "baseversionsiseditable": false,
+       "process": null
+   },
+   {
+       "baseversionsid": 6,
+       "bvnumber": 3,
+       "baseversionsname": "VDV Import Test - Routes only of BV 1",
+       "quality": "Ok",
+       "source": null,
+       "fromdate": "01/01/1901",
+       "untildate": "01/01/1901",
+       "state": "Available",
+       "baseversiontype": "Editable",
+       "finalizationtime": "19/03/2024 23:24:12",
+       "baseversionsiseditable": true,
+       "process": null
+   },
+   {
+       "baseversionsid": 5,
+       "bvnumber": 12,
+       "baseversionsname": "VDV Import",
+       "quality": "Ok",
+       "source": null,
+       "fromdate": "19/03/2024",
+       "untildate": "19/03/2024",
+       "state": "Available",
+       "baseversiontype": "Import",
+       "finalizationtime": "19/03/2024 23:22:53",
+       "baseversionsiseditable": false,
+       "process": null
+   },
+   {
+       "baseversionsid": 4,
+       "bvnumber": 60,
+       "baseversionsname": "Bearbeitbare BV vor dem Import",
+       "quality": "Ok",
+       "source": "Daten_aktuell",
+       "fromdate": "01/01/1901",
+       "untildate": "01/01/1901",
+       "state": "Available",
+       "baseversiontype": "Import",
+       "finalizationtime": "19/03/2024 23:19:20",
+       "baseversionsiseditable": false,
+       "process": null
+   },
+   {
+       "baseversionsid": 3,
+       "bvnumber": 240319,
+       "baseversionsname": "Test",
+       "quality": "Ok",
+       "source": "Data Release Test - Full Copy of BV 1",
+       "fromdate": "25/03/2024",
+       "untildate": "31/03/2024",
+       "state": "Available",
+       "baseversiontype": "Release",
+       "finalizationtime": "19/03/2024 23:10:58",
+       "baseversionsiseditable": false,
+       "process": null
+   },
+   {
+       "baseversionsid": 2,
+       "bvnumber": 2,
+       "baseversionsname": "Data Release Test - Full Copy of BV 1",
+       "quality": "Ok",
+       "source": "Daten_aktuell",
+       "fromdate": "01/01/1901",
+       "untildate": "01/01/1901",
+       "state": "Available",
+       "baseversiontype": "Editable",
+       "finalizationtime": "19/03/2024 23:07:13",
+       "baseversionsiseditable": true,
+       "process": null
+   },
+   {
+       "baseversionsid": 1,
+       "bvnumber": 1,
+       "baseversionsname": "Daten_aktuell",
+       "quality": "Ok",
+       "source": null,
+       "fromdate": "01/01/1901",
+       "untildate": "01/01/1901",
+       "state": "Editing",
+       "baseversiontype": "Editable",
+       "finalizationtime": "01/01/1970 00:00:00",
+       "baseversionsiseditable": true,
+       "process": {
+           "progress": 16,
+           "name": "Datacheck"
+       }
+   }
+]

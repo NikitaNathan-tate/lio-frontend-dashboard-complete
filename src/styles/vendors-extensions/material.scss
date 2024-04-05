@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+
+@include mat.core();
+
+$primary: mat.define-palette(variables.$trapeze-palette-primary, 800);
+$secondary: mat.define-palette(variables.$trapeze-palette-primary, 50);
+
+$accent:mat.define-palette(variables.$trapeze-palette-primary, 700);
+$warn: mat.define-palette(mat.$red-palette, 600);
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    secondary: $secondary,
+    accent: $accent,
+    warn: $warn,
+  )
+));
+@include mat.all-component-themes($custom-theme);

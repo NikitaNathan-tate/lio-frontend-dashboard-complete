@@ -1,0 +1,82 @@
+<div class="map-container">
+     
+     <!--  SPINNER -->
+  <div *ngIf="!initialized || !dataFetched" class="app-loading-container">
+    <app-custom-spinner ></app-custom-spinner>
+  </div>
+  <div class="layer-wrapper">
+    <kendo-tabstrip>
+      <kendo-tabstrip-tab title="Map" [selected]="true">
+        <ng-template kendoTabContent>
+          <kendo-dropdownlist
+            [data]="maplist"
+            textField="text"
+            valueField="value"
+            [(ngModel)]="selectedValues"
+            (valueChange)="mapSelection()"
+          >
+          </kendo-dropdownlist>
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab title="Layers" >
+        <ng-template kendoTabContent>
+          <kendo-multiselect 
+            [checkboxes]="true"
+            [autoClose]="false"
+            [data]="listItems"
+            [(ngModel)]="value"
+            (valueChange)="layerSelection()"
+          ></kendo-multiselect>
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab title="Heading" >
+        <ng-template kendoTabContent>
+          <kendo-label  text="Show Heading"></kendo-label>
+            <input
+              type="checkbox"
+              [(ngModel)]="showHeading"
+              (click)="headingSelection()"
+              kendoCheckBox
+            />
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab *ngIf="this.showPatternLayer" title="EditPattern" >
+        <ng-template kendoTabContent>
+          <kendo-label  text="Edit Pattern"></kendo-label>
+            <input
+              type="checkbox"
+              [(ngModel)]="editPattern"
+              (click)="editPatternSelection()"
+              kendoCheckBox
+            />
+        </ng-template>
+      </kendo-tabstrip-tab>
+    </kendo-tabstrip>
+  </div>
+  
+    <div class="map-wrapper">
+        <div #map class="map"></div>
+    </div>
+
+    
+  <!--  QUICK INFO OVERLAY -->
+  <div class="quick-info">
+    <app-objects-quick-info [selectedStop]="highlightedStop" [selectedStopPoint]="highlightedStopPoint"
+                            [mouseoverStopPoint]="mouseHoverStopPoint" [mouseoverPatternStopPoint]="mouseHoverPatternStopPoint">
+    </app-objects-quick-info>
+  </div>
+<div  class="contextMenu" >
+  <div id="contextMenuRemove" *ngIf="showcontextmenu" class="menuItem" (click)="movePoint()"> Move Point </div>
+</div>
+<!-- BUTTONS OVERLAY -->
+<div class="buttons-overlay-panel"> 
+
+    <!-- SHOW ROUTE -->
+    <app-show-route-btn [isHighlighted]="showRouteBtnHighlighted" [isPatternLayer]="showPatternLayer" [bvnumber]="this.mapConfig.bvnumber"
+                        (showRoute)="selectPattern($event)"></app-show-route-btn>
+    <!-- ZOOM PANEL -->
+     <app-zoom-panel (zoomIn)="onZoomBtnClick(ZoomOl.In)" (zoomOut)="onZoomBtnClick(ZoomOl.Out)"></app-zoom-panel>
+
+  </div> 
+
+</div>

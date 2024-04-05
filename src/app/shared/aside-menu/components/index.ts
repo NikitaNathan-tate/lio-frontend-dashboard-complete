@@ -1,0 +1,1 @@
+export * from './views-nav-menu/views-nav-menu.component';

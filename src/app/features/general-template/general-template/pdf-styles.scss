@@ -1,0 +1,38 @@
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DejaVu Sans";
+  font-weight: bold;
+  src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DejaVu Sans";
+  font-style: italic;
+  src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+@font-face {
+  font-family: "DejaVu Sans";
+  font-weight: bold;
+  font-style: italic;
+  src: url("https://kendo.cdn.telerik.com/2018.2.620/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+
+.k-grid {
+     font-family: "DejaVu Sans", "Arial", sans-serif;
+     height: 430px; /* Default Grid height for the web page */
+}
+
+.k-pdf-export .k-grid.k-widget {
+  display: block;
+  height: auto; /* Grid height auto for the PDF document only */
+}
+
+.pdf-export-only {
+  display: none;
+}
+.k-pdf-export .pdf-export-only{
+  display: block;
+  height: 100px;
+}

@@ -1,0 +1,68 @@
+@use '@angular/material' as mat;
+@use "/src/styles/abstracts/variables";
+@use "/src/styles/abstracts/mixins";
+@use "/src/styles/abstracts/functions";
+
+::ng-deep .notification-dialog{
+   mat-dialog-container {
+    padding: 0.5rem;
+  }
+}
+
+.sheet {
+    display: flex;
+    flex-direction: column;
+    min-height: 250px;
+  
+    .header {
+      background: variables.$primary-color;
+      color: variables.$light-text-color;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+  
+      .icon {
+        margin-right: 1rem;
+        $size: 24px;
+        font-size: $size;
+        height: $size;
+        width: $size;
+      }
+  
+      .text-container {
+        display: flex;
+        align-self: center;
+        flex: 1;
+        font-weight: 600;
+        font-size: 1.25rem;
+  
+        .text {
+          margin-right: 0.5rem;
+        }
+      }
+    }
+  
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem 0;
+  
+      .notification {
+        width: 100%;
+      }
+  
+      .no-notifications {
+        color: functions.matColor(mat.$grey-palette, 400);
+        font-size: 1.25rem;
+        margin: auto;
+      }
+    }
+  }
+  
+  

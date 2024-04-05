@@ -1,0 +1,17 @@
+<kendo-grid [data]="dataSource" 
+            class="custom-kendo-grid"
+            [selectable]="{ mode: 'multiple', checkboxOnly: false }"
+            (selectionChange)="onSelectionChange($event)"
+            scrollable="scrollable"
+            [style]="{ height: '100%' }">
+    <kendo-grid-checkbox-column [width]="40"></kendo-grid-checkbox-column>
+    <ng-container *ngFor="let column of columns">
+        <kendo-grid-column [field]="column.field" [title]="column.title" [hidden]="column.hidden">
+            <ng-template kendoGridCellTemplate let-dataItem>
+                <div class="gridCell">
+                    {{dataItem[column.field]}}
+                </div>
+            </ng-template>
+        </kendo-grid-column>
+    </ng-container>
+</kendo-grid>
