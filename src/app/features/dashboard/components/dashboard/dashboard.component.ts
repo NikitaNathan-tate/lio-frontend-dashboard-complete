@@ -47,39 +47,6 @@ export class DashboardComponent implements OnInit {
   selectedItemCountOfActiveSess: number = 0;
   activeSessionData: any;
   userActivityLogData: any;
-  public baseVersionDropDownItems: ListItemModel[] = [
-    {
-      text: 'Copy Base Version',
-    },
-    {
-      text: 'Finalise',
-    },
-    {
-      text: 'Rename',
-    },
-    {
-      text: 'Export Base Version',
-    },
-    {
-      text: 'Delete',
-    },
-  ];
-  public releasedVersionDropDownItems: ListItemModel[] = [
-    {
-      text: 'Download Consumer Files',
-    },
-    {
-      text: 'Create Delta Files',
-    },
-  ];
-  public lastDataImportDropDownItems: ListItemModel[] = [
-    {
-      text: 'Export Base Version',
-    },
-    {
-      text: 'Delete',
-    },
-  ];
   showCreateNewVersionPopup = false;
   showRecycleBinPopup = false;
   showCreateNewVersionSuccessPopup = false;
