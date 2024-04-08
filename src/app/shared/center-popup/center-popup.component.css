@@ -1,7 +1,7 @@
 .popup-anchor {
     position: fixed;
-    top: 25%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
     visibility: hidden;
     }
@@ -20,6 +20,7 @@
   .overlay {
     position: fixed;
     top: 0;
+    pointer-events: none;
     left: 0;
     width: 100vw;
     height: 100vh;
@@ -29,8 +30,11 @@
   
   /* Center Popup styles */
   .center-popup {
-    z-index: 1001; /* Above the overlay */
-    /* Other styles to center the popup */
+    z-index: 1001; 
+    position: fixed; /* Position relative to the viewport */
+    top: 50%; /* Move down by half of the viewport height */
+    left: 50%; /* Move right by half of the viewport width */
+    transform: translate(-50%, -50%); /* Adjust the position to truly center the popup */
   }
   
   

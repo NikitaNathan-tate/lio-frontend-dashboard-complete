@@ -13,7 +13,7 @@ import { StorageService } from 'src/app/storage/storageservice';
 })
 export class editableBaseVersionComponent implements OnInit {
   @Input() editableBaseVersions: any;
-  
+  showCopybaseVersionPopup:boolean=false;
   public baseVersionDropDownItems: ListItemModel[] = [
     {
       text: 'Copy Base Version',
@@ -140,9 +140,7 @@ export class editableBaseVersionComponent implements OnInit {
     return response;
   }
 
-  onDropDownItemClick(e: any) {
-    console.log("nikkkkkkkkkkkkkkkkkkkkk",e);
-    
+  onDropDownItemClick(e: any) {    
     const clickedItemText = e.text;
 
     switch (clickedItemText) {
@@ -168,7 +166,8 @@ export class editableBaseVersionComponent implements OnInit {
 
   private copyBaseVersion() {
     console.log('Copy Base Version clicked');
-    this.router.navigate(['/dashboard/copybaseversion']);
+    // this.router.navigate(['/dashboard/copybaseversion']);
+    this.showCopybaseVersionPopup=true;
     }
 
   private finalise() {
@@ -189,5 +188,9 @@ export class editableBaseVersionComponent implements OnInit {
   private delete() {
     console.log('Delete clicked');
     // Implement your logic here
+  }
+
+  onCloseCopybaseVersionPopup() {
+    this.showCopybaseVersionPopup = false;
   }
 }
