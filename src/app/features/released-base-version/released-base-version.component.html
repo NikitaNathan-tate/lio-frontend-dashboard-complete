@@ -1,0 +1,70 @@
+<kendo-grid [data]="releaseBaseVersions" [hideHeader]="true"
+[style]="{ height: '100%' }" scrollable="scrollable"
+style="vertical-align: baseline;">
+<kendo-grid-column field="bvnumber" title="ID" [width]="75">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <div
+            style="display: flex; align-items: start; height: 100%; font-weight: 410;">
+            {{ dataItem.bvnumber }}</div>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="versionName" title="Version Name">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <div style="font-weight: 410;">{{ dataItem.source }}</div>
+        <div style="font-size: smaller; color: gray;"
+            *ngIf="dataItem.quality && dataItem.state">
+            <div> <span>Quality&nbsp;</span>
+                <span
+                    [class]="getQualityClass(dataItem.quality)">{{dataItem.quality}}</span>&nbsp;&nbsp;
+                <span>From&nbsp;</span>
+                <span
+                    style="font-weight: 300; color: black;">{{dataItem.fromdate}}</span>&nbsp;&nbsp;
+                <span>Until&nbsp;</span>
+                <span
+                    style="font-weight: 300; color: black;">{{dataItem.untildate}}</span>
+            </div>
+            <div>
+                <span>State&nbsp;</span>
+                <span
+                    [class]="getStateClass(dataItem.state)">{{dataItem.state}}</span>&nbsp;&nbsp;
+                <span>Finalisation&nbsp;</span>
+                <span
+                    style="font-weight: 300; color: black;">{{dataItem.finalizationtime}}</span>
+            </div>
+        </div>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column title="Build Progress" [width]="175">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <div *ngIf="dataItem.process && dataItem.process!=null"
+            style="display: flex;align-items: center;">
+            <span
+                style="font-size:small; color: gray ;">{{dataItem.process.progress}}%&nbsp;</span>
+            <progress background-color: #e0e0e0;
+                value="{{ dataItem.process.progress }}" max="100"></progress>
+        </div>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column title="View" [width]="50">
+    <ng-template kendoGridCellTemplate>
+        <button kendoButton fillMode="flat">
+            <mat-icon style="vertical-align: middle;">search</mat-icon>
+        </button>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column title="Edit" [width]="50">
+    <ng-template kendoGridCellTemplate>
+        <button kendoButton fillMode="flat"> <mat-icon
+                style="vertical-align: middle;">edit</mat-icon>
+        </button>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column title="Options" [width]="50">
+    <ng-template kendoGridCellTemplate>
+        <kendo-dropdownbutton fillMode="flat" size="small"
+            [data]="releasedVersionDropDownItems"> <mat-icon
+                style="vertical-align: middle;">more_vert</mat-icon>
+        </kendo-dropdownbutton>
+    </ng-template>
+</kendo-grid-column>
+</kendo-grid>

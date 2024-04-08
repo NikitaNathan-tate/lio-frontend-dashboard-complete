@@ -47,40 +47,6 @@ export class DashboardComponent implements OnInit {
   selectedItemCountOfActiveSess: number = 0;
   activeSessionData: any;
   userActivityLogData: any;
-  public baseVersionDropDownItems: ListItemModel[] = [
-    {
-      text: 'Copy Base Version',
-    },
-    {
-      text: 'Finalise',
-    },
-    {
-      text: 'Rename',
-    },
-    {
-      text: 'Export Base Version',
-    },
-    {
-      text: 'Delete',
-    },
-  ];
-  public releasedVersionDropDownItems: ListItemModel[] = [
-    {
-      text: 'Download Consumer Files',
-    },
-    {
-      text: 'Create Delta Files',
-      // click: (dataItem) => {this.navigatePage(['copybv'],"Copy Base Version",0);},
-    },
-  ];
-  public lastDataImportDropDownItems: ListItemModel[] = [
-    {
-      text: 'Export Base Version',
-    },
-    {
-      text: 'Delete',
-    },
-  ];
   showCreateNewVersionPopup = false;
   showRecycleBinPopup = false;
   showCreateNewVersionSuccessPopup = false;
@@ -105,6 +71,61 @@ export class DashboardComponent implements OnInit {
 
   public handleSelectionCount(count: any): void {
     this.selectedItemCountOfActiveSess = count;
+  }
+
+  goToCopyBaseVersion() {
+    this.router.navigate(['/copy-base-version']);
+  }
+
+  onDropDownItemClick(e: any) {
+    console.log("nikkkkkkkkkkkkkkkkkkkkk",e);
+    
+    const clickedItemText = e.text;
+
+    switch (clickedItemText) {
+      case 'Copy Base Version':
+        this.copyBaseVersion();
+        break;
+      case 'Finalise':
+        this.finalise();
+        break;
+      case 'Rename':
+        this.rename();
+        break;
+      case 'Export Base Version':
+        this.exportBaseVersion();
+        break;
+      case 'Delete':
+        this.delete();
+        break;
+      default:
+        console.warn('Unknown item clicked:', clickedItemText);
+    }
+  }
+
+  private copyBaseVersion() {
+    console.log('Copy Base Version clicked');
+    this.router.navigate(['/dashboard/copybaseversion']);
+    }
+
+  private finalise() {
+    console.log('Finalise clicked');
+    // Implement your logic here
+  }
+
+  private rename() {
+    console.log('Rename clicked');
+    // Implement your logic here
+  }
+
+  private exportBaseVersion() {
+    console.log('Export Base Version clicked');
+    // Implement your logic here
+  }
+
+  private delete() {
+    console.log('Delete clicked');
+    // Implement your logic here
   }
 
   OpenRecycleBinDialog() {

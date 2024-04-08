@@ -13,6 +13,14 @@ const routes: Routes = [
     component:DashboardComponent
   },
   {
+    path: 'dashboard',    
+    component:DashboardComponent
+  },
+  {
+    path: 'dashboard/copybaseversion',
+    loadChildren: () => import('../app/features/copy-base-version/copy-base-version.module').then(m => m.CopyBaseVersionModule)
+  },
+  {
     path: 'menu',
     component:MenubarComponent
   },

@@ -1,0 +1,36 @@
+<kendo-grid [data]="lastImportedBaseVersions" class="hide-grid-header"
+[hideHeader]="true" style="vertical-align: baseline;">
+<kendo-grid-column field="bvnumber" title="ID" [width]="30">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <div style="font-weight: 410;">{{ dataItem.bvnumber }}</div>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column field="versionName" title="Version Name">
+    <ng-template kendoGridCellTemplate let-dataItem>
+        <div style="font-weight: 410;">{{ dataItem.baseversionsname }}</div>
+        <div style="font-size: smaller; color: gray;"
+            *ngIf="dataItem.quality && dataItem.state">
+            <span>Quality&nbsp;</span>
+            <span
+                [class]="getQualityClass(dataItem.quality)">{{dataItem.quality}}</span>&nbsp;&nbsp;
+            <span>State&nbsp;</span>
+            <span [class]="getStateClass(dataItem.state)">{{dataItem.state}}</span>
+        </div>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column title="View" [width]="50">
+    <ng-template kendoGridCellTemplate>
+        <button kendoButton fillMode="flat">
+            <mat-icon style="vertical-align: middle;">search</mat-icon>
+        </button>
+    </ng-template>
+</kendo-grid-column>
+<kendo-grid-column title="Options" [width]="50">
+    <ng-template kendoGridCellTemplate>
+        <kendo-dropdownbutton fillMode="flat" size="small"
+            [data]="lastDataImportDropDownItems"> <mat-icon
+                style="vertical-align: middle;">more_vert</mat-icon>
+        </kendo-dropdownbutton>
+    </ng-template>
+</kendo-grid-column>
+</kendo-grid>

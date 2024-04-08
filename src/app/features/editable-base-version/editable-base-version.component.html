@@ -1,0 +1,61 @@
+<kendo-grid [data]="editableBaseVersions" [hideHeader]="true" [style]="{ height: '100%' }" scrollable="scrollable"
+    style="vertical-align: baseline;">
+    <kendo-grid-column field="bvnumber" title="ID" [width]="20">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <div style="font-weight: 410;">{{ dataItem.bvnumber }}</div>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column field="versionName" title="Version Name">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <div style="font-weight: 410;">{{ dataItem.baseversionsname }}</div>
+            <div style="font-size: smaller; color: gray;" *ngIf="dataItem.quality && dataItem.state">
+                <span>Quality&nbsp;</span>
+                <span [class]="getQualityClass(dataItem.quality)">{{dataItem.quality}}</span>&nbsp;&nbsp;
+                <span>State&nbsp;</span>
+                <span [class]="getStateClass(dataItem.state)">{{dataItem.state}}</span>
+            </div>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Build Progress" [width]="150">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <div *ngIf="dataItem.process && dataItem.process!==null"
+                style="display:grid; align-items: center; text-align: center; margin-right: 10px; margin-left: 10px; padding-right: 10px; padding-left: 10px;">
+                <progress style="width: 100%; align-items: center;" value="{{ dataItem.process.progress }}"
+                    max="100"></progress>
+                <span
+                    style="font-size:smaller; color: grey;">{{dataItem.process.name}}&nbsp;-&nbsp;{{dataItem.process.progress}}%&nbsp;</span>
+            </div>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="View" [width]="50">
+        <ng-template kendoGridCellTemplate>
+            <button kendoButton fillMode="flat">
+                <mat-icon style="vertical-align: middle;">search</mat-icon>
+            </button>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Edit" [width]="50">
+        <ng-template kendoGridCellTemplate let-dataItem>
+            <button kendoButton fillMode="flat"
+                (click)="navigatePage(['menu'],dataItem.baseversionsname,dataItem.bvnumber )">
+                <mat-icon style="vertical-align: middle;">edit</mat-icon>
+            </button>
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Options" [width]="50">
+        <ng-template kendoGridCellTemplate>
+            <kendo-dropdownbutton fillMode="flat" size="small" [data]="baseVersionDropDownItems"
+                (itemClick)="onDropDownItemClick($event)"> <mat-icon
+                    style="vertical-align: middle;">more_vert</mat-icon>
+            </kendo-dropdownbutton>
+        </ng-template>
+    </kendo-grid-column>
+</kendo-grid>
+
+
+<center-popup *ngIf="showCopybaseVersionPopup" [heading]="'COPY BASE VERSION'"
+    (closePopup)="onCloseCopybaseVersionPopup()" [height]="'90vh'" [width]="'90vw'">
+    <div style="height: 100%; width: 100%;">
+        <copy-base-version></copy-base-version>
+    </div>
+</center-popup>
