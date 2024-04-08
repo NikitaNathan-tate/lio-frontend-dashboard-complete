@@ -63,7 +63,7 @@
                                     <kendo-grid-column title="Options" [width]="50">
                                         <ng-template kendoGridCellTemplate>
                                             <kendo-dropdownbutton fillMode="flat" size="small"
-                                                [data]="baseVersionDropDownItems"> <mat-icon
+                                                [data]="baseVersionDropDownItems"  (itemClick)="onDropDownItemClick($event)"> <mat-icon
                                                     style="vertical-align: middle;">more_vert</mat-icon>
                                             </kendo-dropdownbutton>
                                         </ng-template>
