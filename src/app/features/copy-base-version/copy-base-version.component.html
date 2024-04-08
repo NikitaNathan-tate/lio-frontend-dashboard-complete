@@ -8,12 +8,13 @@
     <div style="flex-grow: 1; overflow: hidden; width: 100%; height: 100%;">
         <kendo-gridlayout  [style]="{height: '100%', width: '100%'}" [rows]="[{ height: '100%' }]" 
         [cols]="[{ width: 40 }, { width: 'auto' }, { width: 40 }]">
+
         <kendo-gridlayout-item [row]="1" [col]="1">
-            <div disabled
+            <div
                 style="display: flex; flex-direction: column;  justify-content: center; align-items: center; height: 100%;">
                 <button #Previous style=" align-items: center;" [disabled]="copying" kendoButton
                     fillMode="flat" (click)="PrevStep()"><mat-icon style="font-weight: bold;" disabled>arrow_back</mat-icon></button>
-                <label [for]="Previous">Previous</label>
+                <!-- <label [for]="Previous">Previous</label> -->
             </div>
     
         </kendo-gridlayout-item>
@@ -122,12 +123,11 @@
                 </kendo-gridlayout>
             </ng-container>
         </kendo-gridlayout-item>
-        <kendo-gridlayout-item [row]="1" [col]="3" [style]="{ width: 60 }">
+        <kendo-gridlayout-item [row]="1" [col]="3">
             <div
                 style="display: flex; flex-direction: column;  justify-content: center; align-items: center; height: 100%;">
                 <button #Next style=" align-items: center;" kendoButton fillMode="flat"
-                    (click)="NextStep()"></button>
-                <label [for]="Next"> <mat-icon style="font-weight: bold;">arrow_forward</mat-icon></label>
+                    (click)="NextStep()"><mat-icon style="font-weight: bold;">arrow_forward</mat-icon></button>
             </div>
         </kendo-gridlayout-item>
     </kendo-gridlayout>
